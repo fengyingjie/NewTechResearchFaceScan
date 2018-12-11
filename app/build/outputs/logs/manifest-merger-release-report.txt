@@ -1,0 +1,308 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:2:1-23:12
+MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\aa4697b8537c82ec68bb9595fae64c99\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\c183379df7e73e06106a00e08bfb95f7\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-theme:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-theme-28.0.0-alpha1.aar\385d23b32cfac97161ae0725e713f093\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-transformation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-transformation-28.0.0-alpha1.aar\f865724eb22b3ef04ec45a763e9d3c8c\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-widget:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-widget-28.0.0-alpha1.aar\2bc9891e9014e6c01eab3c42746796c8\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-bottomsheet:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-bottomsheet-28.0.0-alpha1.aar\dd789c340ddd3ffbb61f4354e15439ae\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-dialog:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-dialog-28.0.0-alpha1.aar\ed1032762f4aacdaec2b6b78afba2c39\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-button:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-button-28.0.0-alpha1.aar\4abd4ebb80cb0c3e288306cc74b37e45\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-card:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-card-28.0.0-alpha1.aar\83205e607863c56f2f7f7d4d0847cc65\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-chip:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-chip-28.0.0-alpha1.aar\38282ca7fa25c1d4dc4f5d6f768b0291\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-internal:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-internal-28.0.0-alpha1.aar\6a24a4cf89c6e3b4e82d89582b9fdb1e\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-bottomnavigation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-bottomnavigation-28.0.0-alpha1.aar\22ef0abb1c8b2a58f028961e8bd1563c\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-floatingactionbutton:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-floatingactionbutton-28.0.0-alpha1.aar\35cb0db8bc6b6dacfa28261296fa4048\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-navigation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-navigation-28.0.0-alpha1.aar\81f0c79392ea124c65662875fcd4daa6\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-resources:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-resources-28.0.0-alpha1.aar\05aeb75d968e51ebd6ed907fa1217dd8\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-tabs:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-tabs-28.0.0-alpha1.aar\27e81a311274b3b1452e39269bb15af3\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-textfield:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-textfield-28.0.0-alpha1.aar\16c12b1c918438b0eff8aa6d89b78753\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-typography:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-typography-28.0.0-alpha1.aar\e6ba55065fa01d0d97f6291884a75c1b\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-shape:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-shape-28.0.0-alpha1.aar\775a46c43f62b011c2df5ed12f66626c\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0-alpha1.aar\6d069986e1549bb91d68a19a11fb473b\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\4e79b763e253a6d9f9ba024eb6da20d6\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0-alpha1.aar\3307effb7cba005fc248fa87a655a5c9\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0-alpha1.aar\a74794f47727ea08f90a84616b4c7918\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0-alpha1.aar\84f0ca4fb1888ea4048c9c8472b550fb\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-animation-28.0.0-alpha1.aar\98c3c428234cb0e257db76339d57a10b\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-circularreveal-coordinatorlayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-circularreveal-coordinatorlayout-28.0.0-alpha1.aar\2e43e0306f8e6039586773e0e18257ff\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-expandable:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-expandable-28.0.0-alpha1.aar\523dd58b12da832d2cf41a7d5bbc38ff\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-stateful:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-stateful-28.0.0-alpha1.aar\5c2801444ee9796627640599d92a009b\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-core-ui:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0-alpha1.aar\f1153593b87bec447f70f0b18eda92a0\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:design-ripple:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-ripple-28.0.0-alpha1.aar\e089108182a0110bafd251f54aef088f\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-core-utils:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0-alpha1.aar\98d3de9f8c7b768075c72856242aa03b\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0-alpha1.aar\d551a3cf9684d2d94e4263e9aeb0417c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\transition-28.0.0-alpha1.aar\70c06ec1b284b352ed986ba4bb8a2ce1\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:loader:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\loader-28.0.0-alpha1.aar\bc78ebeeabd48207894233e1eda06b15\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:viewpager:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0-alpha1.aar\2404b95d088bd5b06a4a22e43e52b074\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0-alpha1.aar\0234f64b7aa9d3946db69f53b7efc48d\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:drawerlayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0-alpha1.aar\db8e0509b65c547d8b3c3757c5e354fd\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0-alpha1.aar\2dab1a6c2d868889bdf7b79f630d1773\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:customview:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\customview-28.0.0-alpha1.aar\3fe993ea09c27d33f294ec446b937e2f\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0-alpha1.aar\e050fc808e30a181c1df7335e7cd82a0\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0-alpha1.aar\3863a07e83a5616682964cc6c7bd1d2b\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:support-compat:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0-alpha1.aar\6238019cdcc1ba5b6d0cc8896d5500d9\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-canvas-28.0.0-alpha1.aar\b37bb3515ffde1d7d1d39b5418cd7b83\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-circularreveal-cardview-28.0.0-alpha1.aar\88da0fef377a0afd6b60f173626a2b70\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-circularreveal:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-circularreveal-28.0.0-alpha1.aar\832216c06b7ba6528f2204ae95f988ec\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-drawable:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-drawable-28.0.0-alpha1.aar\7b54fe537dec078f6b6e995300a4b22c\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:documentfile:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0-alpha1.aar\1aa7b67683702d4fad8b16c6f446279d\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0-alpha1.aar\6a6a651bd8c3b8cd398283b7af21dfd6\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:print:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\print-28.0.0-alpha1.aar\ff960c444c5b79a2c1bce8170b8fcad8\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:interpolator:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0-alpha1.aar\174f2a030d7afe56bcdbbcea3482e378\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:cursoradapter:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0-alpha1.aar\1eb4a5bdf8d7ada93601e40f07b9fbeb\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:cardview-v7:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0-alpha1.aar\67d660c05dca68c9b88c13a229d8cd00\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:design-color:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-color-28.0.0-alpha1.aar\ed995c9cb5738dabd92018382d283d00\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-math:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-math-28.0.0-alpha1.aar\7ad1e1346d68e098a86a7bd38b30ad73\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-snackbar:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-snackbar-28.0.0-alpha1.aar\4960e38b88345bda60ec71ffb5a15494\AndroidManifest.xml:17:1-24:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\68a533e5d4df3c1d1ed80dcd4a4ad32d\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\e282b281d8c3891942d10e5de0a030e7\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\c0ba7442f3e7c666be42dc0d7665ef1a\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\218af2f89151ca527ddf8c3d7099240b\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:2:1-23:12
+INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:2:1-23:12
+	package
+		ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:3:5-71
+		INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml
+		ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:2:1-23:12
+		INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml
+		ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:2:1-23:12
+		INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:5:5-21:19
+MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\aa4697b8537c82ec68bb9595fae64c99\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\aa4697b8537c82ec68bb9595fae64c99\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\c183379df7e73e06106a00e08bfb95f7\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\c183379df7e73e06106a00e08bfb95f7\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-theme:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-theme-28.0.0-alpha1.aar\385d23b32cfac97161ae0725e713f093\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-theme:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-theme-28.0.0-alpha1.aar\385d23b32cfac97161ae0725e713f093\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-transformation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-transformation-28.0.0-alpha1.aar\f865724eb22b3ef04ec45a763e9d3c8c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-transformation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-transformation-28.0.0-alpha1.aar\f865724eb22b3ef04ec45a763e9d3c8c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-widget:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-widget-28.0.0-alpha1.aar\2bc9891e9014e6c01eab3c42746796c8\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-widget:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-widget-28.0.0-alpha1.aar\2bc9891e9014e6c01eab3c42746796c8\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-bottomsheet:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-bottomsheet-28.0.0-alpha1.aar\dd789c340ddd3ffbb61f4354e15439ae\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-bottomsheet:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-bottomsheet-28.0.0-alpha1.aar\dd789c340ddd3ffbb61f4354e15439ae\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-dialog:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-dialog-28.0.0-alpha1.aar\ed1032762f4aacdaec2b6b78afba2c39\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-dialog:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-dialog-28.0.0-alpha1.aar\ed1032762f4aacdaec2b6b78afba2c39\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-button:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-button-28.0.0-alpha1.aar\4abd4ebb80cb0c3e288306cc74b37e45\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-button:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-button-28.0.0-alpha1.aar\4abd4ebb80cb0c3e288306cc74b37e45\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-card:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-card-28.0.0-alpha1.aar\83205e607863c56f2f7f7d4d0847cc65\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-card:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-card-28.0.0-alpha1.aar\83205e607863c56f2f7f7d4d0847cc65\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-chip:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-chip-28.0.0-alpha1.aar\38282ca7fa25c1d4dc4f5d6f768b0291\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-chip:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-chip-28.0.0-alpha1.aar\38282ca7fa25c1d4dc4f5d6f768b0291\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-internal:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-internal-28.0.0-alpha1.aar\6a24a4cf89c6e3b4e82d89582b9fdb1e\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-internal:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-internal-28.0.0-alpha1.aar\6a24a4cf89c6e3b4e82d89582b9fdb1e\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-bottomnavigation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-bottomnavigation-28.0.0-alpha1.aar\22ef0abb1c8b2a58f028961e8bd1563c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-bottomnavigation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-bottomnavigation-28.0.0-alpha1.aar\22ef0abb1c8b2a58f028961e8bd1563c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-floatingactionbutton:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-floatingactionbutton-28.0.0-alpha1.aar\35cb0db8bc6b6dacfa28261296fa4048\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-floatingactionbutton:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-floatingactionbutton-28.0.0-alpha1.aar\35cb0db8bc6b6dacfa28261296fa4048\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-navigation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-navigation-28.0.0-alpha1.aar\81f0c79392ea124c65662875fcd4daa6\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-navigation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-navigation-28.0.0-alpha1.aar\81f0c79392ea124c65662875fcd4daa6\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-resources:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-resources-28.0.0-alpha1.aar\05aeb75d968e51ebd6ed907fa1217dd8\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-resources:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-resources-28.0.0-alpha1.aar\05aeb75d968e51ebd6ed907fa1217dd8\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-tabs:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-tabs-28.0.0-alpha1.aar\27e81a311274b3b1452e39269bb15af3\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-tabs:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-tabs-28.0.0-alpha1.aar\27e81a311274b3b1452e39269bb15af3\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-textfield:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-textfield-28.0.0-alpha1.aar\16c12b1c918438b0eff8aa6d89b78753\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-textfield:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-textfield-28.0.0-alpha1.aar\16c12b1c918438b0eff8aa6d89b78753\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-typography:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-typography-28.0.0-alpha1.aar\e6ba55065fa01d0d97f6291884a75c1b\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-typography:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-typography-28.0.0-alpha1.aar\e6ba55065fa01d0d97f6291884a75c1b\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-shape:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-shape-28.0.0-alpha1.aar\775a46c43f62b011c2df5ed12f66626c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-shape:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-shape-28.0.0-alpha1.aar\775a46c43f62b011c2df5ed12f66626c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\4e79b763e253a6d9f9ba024eb6da20d6\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\4e79b763e253a6d9f9ba024eb6da20d6\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-animation-28.0.0-alpha1.aar\98c3c428234cb0e257db76339d57a10b\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-animation-28.0.0-alpha1.aar\98c3c428234cb0e257db76339d57a10b\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-circularreveal-coordinatorlayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-circularreveal-coordinatorlayout-28.0.0-alpha1.aar\2e43e0306f8e6039586773e0e18257ff\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-circularreveal-coordinatorlayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-circularreveal-coordinatorlayout-28.0.0-alpha1.aar\2e43e0306f8e6039586773e0e18257ff\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-expandable:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-expandable-28.0.0-alpha1.aar\523dd58b12da832d2cf41a7d5bbc38ff\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-expandable:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-expandable-28.0.0-alpha1.aar\523dd58b12da832d2cf41a7d5bbc38ff\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-stateful:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-stateful-28.0.0-alpha1.aar\5c2801444ee9796627640599d92a009b\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-stateful:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-stateful-28.0.0-alpha1.aar\5c2801444ee9796627640599d92a009b\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-ripple:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-ripple-28.0.0-alpha1.aar\e089108182a0110bafd251f54aef088f\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-ripple:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-ripple-28.0.0-alpha1.aar\e089108182a0110bafd251f54aef088f\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-canvas-28.0.0-alpha1.aar\b37bb3515ffde1d7d1d39b5418cd7b83\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-canvas-28.0.0-alpha1.aar\b37bb3515ffde1d7d1d39b5418cd7b83\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-circularreveal-cardview-28.0.0-alpha1.aar\88da0fef377a0afd6b60f173626a2b70\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-circularreveal-cardview-28.0.0-alpha1.aar\88da0fef377a0afd6b60f173626a2b70\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-circularreveal:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-circularreveal-28.0.0-alpha1.aar\832216c06b7ba6528f2204ae95f988ec\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-circularreveal:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-circularreveal-28.0.0-alpha1.aar\832216c06b7ba6528f2204ae95f988ec\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-drawable:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-drawable-28.0.0-alpha1.aar\7b54fe537dec078f6b6e995300a4b22c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-drawable:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-drawable-28.0.0-alpha1.aar\7b54fe537dec078f6b6e995300a4b22c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-color:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-color-28.0.0-alpha1.aar\ed995c9cb5738dabd92018382d283d00\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-color:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-color-28.0.0-alpha1.aar\ed995c9cb5738dabd92018382d283d00\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-math:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-math-28.0.0-alpha1.aar\7ad1e1346d68e098a86a7bd38b30ad73\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-math:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-math-28.0.0-alpha1.aar\7ad1e1346d68e098a86a7bd38b30ad73\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-snackbar:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-snackbar-28.0.0-alpha1.aar\4960e38b88345bda60ec71ffb5a15494\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-snackbar:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-snackbar-28.0.0-alpha1.aar\4960e38b88345bda60ec71ffb5a15494\AndroidManifest.xml:22:5-20
+	android:supportsRtl
+		ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:11:9-40
+activity#bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.MainActivity
+ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:12:9-20:20
+	android:label
+		ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:14:13-45
+	android:name
+		ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:13:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:15:13-19:29
+action#android.intent.action.MAIN
+ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:16:17-69
+	android:name
+		ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:18:17-77
+	android:name
+		ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml:18:27-74
+uses-sdk
+INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml
+INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\aa4697b8537c82ec68bb9595fae64c99\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\aa4697b8537c82ec68bb9595fae64c99\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\c183379df7e73e06106a00e08bfb95f7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\c183379df7e73e06106a00e08bfb95f7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-theme:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-theme-28.0.0-alpha1.aar\385d23b32cfac97161ae0725e713f093\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-theme:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-theme-28.0.0-alpha1.aar\385d23b32cfac97161ae0725e713f093\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-transformation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-transformation-28.0.0-alpha1.aar\f865724eb22b3ef04ec45a763e9d3c8c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-transformation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-transformation-28.0.0-alpha1.aar\f865724eb22b3ef04ec45a763e9d3c8c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-widget:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-widget-28.0.0-alpha1.aar\2bc9891e9014e6c01eab3c42746796c8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-widget:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-widget-28.0.0-alpha1.aar\2bc9891e9014e6c01eab3c42746796c8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-bottomsheet:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-bottomsheet-28.0.0-alpha1.aar\dd789c340ddd3ffbb61f4354e15439ae\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-bottomsheet:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-bottomsheet-28.0.0-alpha1.aar\dd789c340ddd3ffbb61f4354e15439ae\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-dialog:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-dialog-28.0.0-alpha1.aar\ed1032762f4aacdaec2b6b78afba2c39\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-dialog:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-dialog-28.0.0-alpha1.aar\ed1032762f4aacdaec2b6b78afba2c39\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-button:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-button-28.0.0-alpha1.aar\4abd4ebb80cb0c3e288306cc74b37e45\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-button:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-button-28.0.0-alpha1.aar\4abd4ebb80cb0c3e288306cc74b37e45\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-card:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-card-28.0.0-alpha1.aar\83205e607863c56f2f7f7d4d0847cc65\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-card:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-card-28.0.0-alpha1.aar\83205e607863c56f2f7f7d4d0847cc65\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-chip:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-chip-28.0.0-alpha1.aar\38282ca7fa25c1d4dc4f5d6f768b0291\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-chip:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-chip-28.0.0-alpha1.aar\38282ca7fa25c1d4dc4f5d6f768b0291\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-internal:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-internal-28.0.0-alpha1.aar\6a24a4cf89c6e3b4e82d89582b9fdb1e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-internal:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-internal-28.0.0-alpha1.aar\6a24a4cf89c6e3b4e82d89582b9fdb1e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-bottomnavigation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-bottomnavigation-28.0.0-alpha1.aar\22ef0abb1c8b2a58f028961e8bd1563c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-bottomnavigation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-bottomnavigation-28.0.0-alpha1.aar\22ef0abb1c8b2a58f028961e8bd1563c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-floatingactionbutton:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-floatingactionbutton-28.0.0-alpha1.aar\35cb0db8bc6b6dacfa28261296fa4048\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-floatingactionbutton:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-floatingactionbutton-28.0.0-alpha1.aar\35cb0db8bc6b6dacfa28261296fa4048\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-navigation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-navigation-28.0.0-alpha1.aar\81f0c79392ea124c65662875fcd4daa6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-navigation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-navigation-28.0.0-alpha1.aar\81f0c79392ea124c65662875fcd4daa6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-resources:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-resources-28.0.0-alpha1.aar\05aeb75d968e51ebd6ed907fa1217dd8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-resources:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-resources-28.0.0-alpha1.aar\05aeb75d968e51ebd6ed907fa1217dd8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-tabs:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-tabs-28.0.0-alpha1.aar\27e81a311274b3b1452e39269bb15af3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-tabs:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-tabs-28.0.0-alpha1.aar\27e81a311274b3b1452e39269bb15af3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-textfield:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-textfield-28.0.0-alpha1.aar\16c12b1c918438b0eff8aa6d89b78753\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-textfield:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-textfield-28.0.0-alpha1.aar\16c12b1c918438b0eff8aa6d89b78753\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-typography:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-typography-28.0.0-alpha1.aar\e6ba55065fa01d0d97f6291884a75c1b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-typography:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-typography-28.0.0-alpha1.aar\e6ba55065fa01d0d97f6291884a75c1b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-shape:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-shape-28.0.0-alpha1.aar\775a46c43f62b011c2df5ed12f66626c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-shape:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-shape-28.0.0-alpha1.aar\775a46c43f62b011c2df5ed12f66626c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0-alpha1.aar\6d069986e1549bb91d68a19a11fb473b\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0-alpha1.aar\6d069986e1549bb91d68a19a11fb473b\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\4e79b763e253a6d9f9ba024eb6da20d6\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\4e79b763e253a6d9f9ba024eb6da20d6\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0-alpha1.aar\3307effb7cba005fc248fa87a655a5c9\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:support-fragment:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0-alpha1.aar\3307effb7cba005fc248fa87a655a5c9\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0-alpha1.aar\a74794f47727ea08f90a84616b4c7918\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0-alpha1.aar\a74794f47727ea08f90a84616b4c7918\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0-alpha1.aar\84f0ca4fb1888ea4048c9c8472b550fb\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0-alpha1.aar\84f0ca4fb1888ea4048c9c8472b550fb\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-animation-28.0.0-alpha1.aar\98c3c428234cb0e257db76339d57a10b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-animation-28.0.0-alpha1.aar\98c3c428234cb0e257db76339d57a10b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-circularreveal-coordinatorlayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-circularreveal-coordinatorlayout-28.0.0-alpha1.aar\2e43e0306f8e6039586773e0e18257ff\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-circularreveal-coordinatorlayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-circularreveal-coordinatorlayout-28.0.0-alpha1.aar\2e43e0306f8e6039586773e0e18257ff\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-expandable:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-expandable-28.0.0-alpha1.aar\523dd58b12da832d2cf41a7d5bbc38ff\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-expandable:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-expandable-28.0.0-alpha1.aar\523dd58b12da832d2cf41a7d5bbc38ff\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-stateful:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-stateful-28.0.0-alpha1.aar\5c2801444ee9796627640599d92a009b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-stateful:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-stateful-28.0.0-alpha1.aar\5c2801444ee9796627640599d92a009b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0-alpha1.aar\f1153593b87bec447f70f0b18eda92a0\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0-alpha1.aar\f1153593b87bec447f70f0b18eda92a0\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:design-ripple:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-ripple-28.0.0-alpha1.aar\e089108182a0110bafd251f54aef088f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-ripple:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-ripple-28.0.0-alpha1.aar\e089108182a0110bafd251f54aef088f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0-alpha1.aar\98d3de9f8c7b768075c72856242aa03b\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0-alpha1.aar\98d3de9f8c7b768075c72856242aa03b\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0-alpha1.aar\d551a3cf9684d2d94e4263e9aeb0417c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0-alpha1.aar\d551a3cf9684d2d94e4263e9aeb0417c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\transition-28.0.0-alpha1.aar\70c06ec1b284b352ed986ba4bb8a2ce1\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:transition:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\transition-28.0.0-alpha1.aar\70c06ec1b284b352ed986ba4bb8a2ce1\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:loader:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\loader-28.0.0-alpha1.aar\bc78ebeeabd48207894233e1eda06b15\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:loader:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\loader-28.0.0-alpha1.aar\bc78ebeeabd48207894233e1eda06b15\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:viewpager:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0-alpha1.aar\2404b95d088bd5b06a4a22e43e52b074\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:viewpager:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0-alpha1.aar\2404b95d088bd5b06a4a22e43e52b074\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0-alpha1.aar\0234f64b7aa9d3946db69f53b7efc48d\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0-alpha1.aar\0234f64b7aa9d3946db69f53b7efc48d\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0-alpha1.aar\db8e0509b65c547d8b3c3757c5e354fd\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0-alpha1.aar\db8e0509b65c547d8b3c3757c5e354fd\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0-alpha1.aar\2dab1a6c2d868889bdf7b79f630d1773\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0-alpha1.aar\2dab1a6c2d868889bdf7b79f630d1773\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:customview:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\customview-28.0.0-alpha1.aar\3fe993ea09c27d33f294ec446b937e2f\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:customview:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\customview-28.0.0-alpha1.aar\3fe993ea09c27d33f294ec446b937e2f\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0-alpha1.aar\e050fc808e30a181c1df7335e7cd82a0\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0-alpha1.aar\e050fc808e30a181c1df7335e7cd82a0\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0-alpha1.aar\3863a07e83a5616682964cc6c7bd1d2b\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0-alpha1.aar\3863a07e83a5616682964cc6c7bd1d2b\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:support-compat:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0-alpha1.aar\6238019cdcc1ba5b6d0cc8896d5500d9\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:support-compat:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0-alpha1.aar\6238019cdcc1ba5b6d0cc8896d5500d9\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-canvas-28.0.0-alpha1.aar\b37bb3515ffde1d7d1d39b5418cd7b83\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-canvas-28.0.0-alpha1.aar\b37bb3515ffde1d7d1d39b5418cd7b83\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-circularreveal-cardview-28.0.0-alpha1.aar\88da0fef377a0afd6b60f173626a2b70\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-circularreveal-cardview-28.0.0-alpha1.aar\88da0fef377a0afd6b60f173626a2b70\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-circularreveal:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-circularreveal-28.0.0-alpha1.aar\832216c06b7ba6528f2204ae95f988ec\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-circularreveal:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-circularreveal-28.0.0-alpha1.aar\832216c06b7ba6528f2204ae95f988ec\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-drawable:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-drawable-28.0.0-alpha1.aar\7b54fe537dec078f6b6e995300a4b22c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-drawable:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-drawable-28.0.0-alpha1.aar\7b54fe537dec078f6b6e995300a4b22c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0-alpha1.aar\1aa7b67683702d4fad8b16c6f446279d\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:documentfile:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0-alpha1.aar\1aa7b67683702d4fad8b16c6f446279d\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0-alpha1.aar\6a6a651bd8c3b8cd398283b7af21dfd6\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0-alpha1.aar\6a6a651bd8c3b8cd398283b7af21dfd6\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:print:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\print-28.0.0-alpha1.aar\ff960c444c5b79a2c1bce8170b8fcad8\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:print:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\print-28.0.0-alpha1.aar\ff960c444c5b79a2c1bce8170b8fcad8\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:interpolator:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0-alpha1.aar\174f2a030d7afe56bcdbbcea3482e378\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:interpolator:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0-alpha1.aar\174f2a030d7afe56bcdbbcea3482e378\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0-alpha1.aar\1eb4a5bdf8d7ada93601e40f07b9fbeb\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0-alpha1.aar\1eb4a5bdf8d7ada93601e40f07b9fbeb\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0-alpha1.aar\67d660c05dca68c9b88c13a229d8cd00\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0-alpha1.aar\67d660c05dca68c9b88c13a229d8cd00\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:design-color:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-color-28.0.0-alpha1.aar\ed995c9cb5738dabd92018382d283d00\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-color:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-color-28.0.0-alpha1.aar\ed995c9cb5738dabd92018382d283d00\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-math:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-math-28.0.0-alpha1.aar\7ad1e1346d68e098a86a7bd38b30ad73\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-math:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-math-28.0.0-alpha1.aar\7ad1e1346d68e098a86a7bd38b30ad73\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-snackbar:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-snackbar-28.0.0-alpha1.aar\4960e38b88345bda60ec71ffb5a15494\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-snackbar:28.0.0-alpha1] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\design-snackbar-28.0.0-alpha1.aar\4960e38b88345bda60ec71ffb5a15494\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\68a533e5d4df3c1d1ed80dcd4a4ad32d\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\68a533e5d4df3c1d1ed80dcd4a4ad32d\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\e282b281d8c3891942d10e5de0a030e7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\e282b281d8c3891942d10e5de0a030e7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\c0ba7442f3e7c666be42dc0d7665ef1a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\c0ba7442f3e7c666be42dc0d7665ef1a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\218af2f89151ca527ddf8c3d7099240b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\feng.yingjie\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\218af2f89151ca527ddf8c3d7099240b\AndroidManifest.xml:20:5-44
+INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml
+INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml
+		ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml
+		ADDED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidStudioProjects\NewTechResearchFaceScan\app\src\main\AndroidManifest.xml

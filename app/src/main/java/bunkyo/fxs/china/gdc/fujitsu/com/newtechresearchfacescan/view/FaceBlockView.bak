@@ -1,0 +1,205 @@
+package bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.view;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PixelFormat;
+import android.graphics.Rect;
+import android.util.AttributeSet;
+import android.view.SurfaceView;
+import android.view.SurfaceHolder;
+
+import java.util.AbstractQueue;
+import java.util.ArrayList;
+import java.util.Queue;
+import java.util.Stack;
+import java.util.Vector;
+
+import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.BaiduFaceClient;
+
+public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback {
+
+    public static Vector<int[]> BLOCK_DATA = new Vector<int[]>();
+    public static Vector<Bitmap> FACE_DATA = new Vector<Bitmap>();
+
+    /**每30帧刷新一次屏幕**/
+    public static final int TIME_IN_FRAME = 1;
+
+    private SurfaceHolder mHolder = null;
+    private Canvas mCanvas = null;//绘图的画布
+    private boolean mIsDrawing = false;//控制绘画线程的标志位
+    private Thread workThread = null;
+    private Stack mBlockStack = null;
+    private int mPreviewWidth;
+    public float mWidthScaleFactor = 1.0f;
+    private int mPreviewHeight;
+    public float mHeightScaleFactor = 1.0f;
+
+    private Vector<int[]> mFaceData;
+
+    public FaceBlockView(Context context) {
+        super(context);
+        init();
+    }
+
+    public FaceBlockView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
+
+    public FaceBlockView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init();
+    }
+
+    public FaceBlockView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        init();
+    }
+
+    private void init(){
+        mHolder = getHolder();
+        mHolder.addCallback(this);
+        mHolder.setFormat(PixelFormat.TRANSPARENT); // 设置为透明
+        mBlockStack = new Stack();
+        mFaceData = new Vector<int[]>();
+        setZOrderOnTop(true);// 设置为顶端
+        //BaiduFaceClient.init();
+
+    }
+
+    public void addFaceBlocks(int[] faces){
+        mFaceData.add(faces);
+    }
+
+    @Override
+    public void surfaceCreated(SurfaceHolder holder) {
+//        mIsDrawing = true;
+//        if(workThread == null){
+//            workThread = new Thread(this);
+//        }
+//        workThread.start();
+    }
+
+    public static void addFaceImage(Bitmap img){
+        if(FACE_DATA.size()<5) {
+            FACE_DATA.add(img);
+        }
+//        FACE_DATA.clear();
+//        FACE_DATA.add(img);
+    }
+    public static void drawFaceBlock(int x,int y, int w, int h) {
+
+        if(BLOCK_DATA.size()<10) {
+            int[] data = new int[]{x, y, w, h};
+            BLOCK_DATA.add(data);
+        }
+    }
+
+    @Override
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        Paint pen = new Paint();
+//        pen.setAlpha(1);
+        pen.setColor(Color.RED);
+        pen.setStyle(Paint.Style.FILL);
+
+        while (mFaceData.size()>0){
+            pen.setColor(Color.RED);
+            canvas.drawText("faceCount:"+ String.valueOf(mFaceData.size()),0,0,pen);
+            pen.setColor(Color.GREEN);
+            int[] faces = mFaceData.remove(0);
+            for(int j=0; j<faces.length;j++){
+                int x=faces[j/4+0];
+                int y=faces[j/4+1];
+                int w=faces[j/4+2];
+                int h=faces[j/4+3];
+                canvas.drawRect(x,y,x+w,y+h,pen);
+
+            }
+        }
+    }
+
+    @Override
+    public void surfaceDestroyed(SurfaceHolder holder) {
+//        mIsDrawing = false;
+//        try {
+//            workThread.join();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+    }
+
+//    @Override
+//    public void run() {
+//        while (true) {
+//
+//            /**取得更新之前的时间**/
+//            long startTime = System.currentTimeMillis();
+//
+//            draw();
+//
+//            /**取得更新结束的时间**/
+//            long endTime = System.currentTimeMillis();
+//
+//            /**计算出一次更新的毫秒数**/
+//            int diffTime  = (int)(endTime - startTime);
+//
+//            /**确保每次更新时间为30帧**/
+//            while(diffTime <=TIME_IN_FRAME) {
+//                diffTime = (int)(System.currentTimeMillis() - startTime);
+//                /**线程等待**/
+//                Thread.yield();
+//            }
+//
+//        }
+//    }
+//
+//    @Override
+//    protected void onDraw(Canvas canvas) {
+//        super.onDraw(canvas);
+//    }
+//
+//    //绘图操作
+//    private void draw() {
+//        try {
+//            /**在这里加上线程安全锁**/
+//            synchronized (mHolder) {
+//                /**拿到当前画布 然后锁定**/
+//                mCanvas =mHolder.lockCanvas();
+//
+//                Paint pen = new Paint();
+//                pen.setAlpha(1);
+//                pen.setColor(Color.GREEN);
+//
+//
+//                if(FACE_DATA.size() > 0){
+//                    //int[] block = BLOCK_DATA.get(BLOCK_DATA.size()-1);
+//                    Bitmap face = FACE_DATA.get(FACE_DATA.size()-1);
+//
+//                    int[] block = BaiduFaceClient.detect(face);
+//
+//                    mCanvas.drawBitmap(face,new Matrix(),pen);
+//                    mCanvas.drawRect(block[0],block[1],block[0]+block[2],block[1]+block[3],pen);
+////                  FACE_DATA.clear();
+//                }
+//
+////                /**绘制结束后解锁显示在屏幕上**/
+////                mHolder.unlockCanvasAndPost(mCanvas);
+//            }
+//
+//        } catch (Exception e) {
+//        } finally {
+//            if (mCanvas != null)
+//                mHolder.unlockCanvasAndPost(mCanvas);//保证每次都将绘图的内容提交
+//        }
+//    }
+}
