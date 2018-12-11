@@ -1,22 +1,13 @@
 package bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.view;
 
 import android.Manifest;
-import android.app.Activity;
-import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.graphics.ImageFormat;
-import android.graphics.PointF;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraDevice;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.PixelFormat;
 import android.hardware.camera2.CameraManager;
 import android.hardware.camera2.CaptureRequest;
 import android.hardware.camera2.TotalCaptureResult;
@@ -29,11 +20,8 @@ import android.os.HandlerThread;
 import android.os.Message;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ActivityManagerCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.Surface;
 import android.view.SurfaceHolder;
@@ -42,53 +30,34 @@ import android.widget.Toast;
 
 import java.nio.ByteBuffer;
 import java.util.Arrays;
-import java.util.List;
 
-import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.BaiduFaceClient;
-import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.MainActivity;
 import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.R;
 import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.FaceDetector;
 
-import static android.content.ContentValues.TAG;
 import static android.os.Looper.getMainLooper;
 import static bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.FaceDetector.MSG_FACEDATA_READY;
 
-public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Callback ,Runnable {
+public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Callback {
 
-    public static final int REQUEST_CAMERA_CODE = 100;
-
-    //private FaceDetector.Face[] mFaces = null;//new FaceDetector.Face[50];
-    //private FaceDetector mFaceDetector = null;//new FaceDetector(bitmap.getWidth(), bitmap.getHeight(), 50);
-
+    private static String LOG_TAG = "CameraPreviewView";
     private CameraManager mCameraManager;//摄像头管理器
     private Handler childHandler2,childHandler, mainHandler;
     private String mCameraID;//摄像头Id 0 为后  1 为前
     private ImageReader mImageReader;
     private CameraCaptureSession mCameraCaptureSession;
     private CameraDevice mCameraDevice;
-    private Thread mWorkThread;
-    private boolean mWorkingFlg;
     private boolean mTakingPicFlg;
     private FaceDetector mFaceDetector;
-    private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
     private FaceBlockView mBlockView;
-
-    static
-
-    {
-
-        ORIENTATIONS.append(Surface.ROTATION_0, 90);
-
-        ORIENTATIONS.append(Surface.ROTATION_90, 180);
-
-        ORIENTATIONS.append(Surface.ROTATION_180, 270);
-
-        ORIENTATIONS.append(Surface.ROTATION_270, 0);
-
-    }
-
     private SurfaceHolder mHolder = null;
-    private boolean isOpen = false;// 相机是否打开
+    private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
+    static
+    {
+        ORIENTATIONS.append(Surface.ROTATION_0, 90);
+        ORIENTATIONS.append(Surface.ROTATION_90, 180);
+        ORIENTATIONS.append(Surface.ROTATION_180, 270);
+        ORIENTATIONS.append(Surface.ROTATION_270, 0);
+    }
 
     public CameraPreviewView(Context context) {
         super(context);
@@ -113,23 +82,12 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
     private void init(){
         mHolder = getHolder();
         mHolder.addCallback(this);
-        //mWorkThread = new Thread(this);
-        mWorkingFlg = false;
-
-//        mHolder.setFormat(PixelFormat.TRANSPARENT); // 设置为透明
-//        setZOrderOnTop(true);// 设置为顶端
-
     }
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         initCamera2();
-
         mBlockView = (FaceBlockView) this.getRootView().findViewById(R.id.faceBlock);
-//        mWorkingFlg = true;
-//        if(!mWorkThread.isAlive()){
-//            mWorkThread.start();
-//        }
     }
 
     @Override
@@ -139,12 +97,7 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
-//        mWorkingFlg = false;
-//        try {
-//            mWorkThread.join();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+
     }
 
     /**
@@ -159,6 +112,53 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
         childHandler = new Handler(handlerThread.getLooper());
         childHandler2 = new Handler(handlerThreadFindFace.getLooper());
         mainHandler = new Handler(getMainLooper());
+
+        mCameraID = "" + CameraCharacteristics.LENS_FACING_FRONT;//前摄像头
+
+        //获取摄像头管理
+        mCameraManager = (CameraManager) getContext().getSystemService(Context.CAMERA_SERVICE);
+
+        try {
+            if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                //申请WRITE_EXTERNAL_STORAGE权限
+                return;
+            } else {
+
+                //取得相机一览
+                String[] cameraIDList = mCameraManager.getCameraIdList();
+                if(cameraIDList == null){
+                    return;
+                }
+
+                //遍历全部的相机
+                for (int i=0; i<cameraIDList.length;i++){
+
+                    String cameraID = cameraIDList[i];
+                    CameraCharacteristics characteristics = mCameraManager.getCameraCharacteristics(cameraID);
+
+                    //检查相机是否支持Camera2接口(完全支持非必须条件)
+                    int supporedLevel = characteristics.get(CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL);
+                    if(CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL_FULL != supporedLevel){
+                        Log.i(LOG_TAG,"相机不完全兼容Camera2接口");
+                    }
+
+                    int lensFacing = characteristics.get(CameraCharacteristics.LENS_FACING);
+                    int a = characteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
+                    if(lensFacing == CameraCharacteristics.LENS_FACING_BACK){
+                        Log.i(LOG_TAG,"LENS_FACING_BACK Founed");
+                        mCameraID = cameraID;
+
+                        //float[] b = characteristics.get(CameraCharacteristics.LENS_POSE_ROTATION);
+                    }
+
+                }
+
+                //打开摄像头
+                mCameraManager.openCamera(mCameraID, stateCallback, mainHandler);
+            }
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
 
         mImageReader = ImageReader.newInstance(this.getWidth(), this.getHeight(), ImageFormat.JPEG, 1);
         mImageReader.setOnImageAvailableListener(new ImageReader.OnImageAvailableListener() {
@@ -192,22 +192,6 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
                 bytes = null;
             }
         }, childHandler);
-
-        mCameraID = "" + CameraCharacteristics.LENS_FACING_FRONT;//前摄像头
-
-        //获取摄像头管理
-        mCameraManager = (CameraManager) getContext().getSystemService(Context.CAMERA_SERVICE);
-        try {
-            if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                //申请WRITE_EXTERNAL_STORAGE权限
-                return;
-            } else {
-                //打开摄像头
-                mCameraManager.openCamera(mCameraID, stateCallback, mainHandler);
-            }
-        } catch (CameraAccessException e) {
-            e.printStackTrace();
-        }
     }
 
     /**
@@ -232,6 +216,8 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
                     previewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);
                     // 打开闪光灯
                     previewRequestBuilder.set(CaptureRequest.CONTROL_AE_MODE, CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH);
+
+                    //previewRequestBuilder.set(CaptureRequest.STATISTICS_FACE_DETECT_MODE,CaptureRequest.STATISTICS_FACE_DETECT_MODE_FULL);
                     // 显示预览
                     // 获取手机方向
                     int rotation = new Float(getRootView().getRotation()).intValue();
@@ -308,12 +294,6 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
             //开启预览
             takePreview();
             //takePicture();
-            mWorkingFlg = true;
-
-//            if(mWorkThread!=null && !mWorkThread.isAlive()){
-//                mWorkThread.start();
-//            }
-
         }
 
         @Override
@@ -321,14 +301,6 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
             if (null != mCameraDevice) {
                 mCameraDevice.close();
                 mCameraDevice = null;
-//                mWorkingFlg = false;
-//                if(mWorkThread!=null && mWorkThread.isAlive()){
-//                    try {
-//                        mWorkThread.join();
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
             }
         }
 
@@ -337,43 +309,9 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
             if (null != mCameraDevice) {
                 mCameraDevice.close();
                 mCameraDevice = null;
-//                mWorkingFlg = false;
-//                if(mWorkThread!=null && mWorkThread.isAlive()){
-//                    try {
-//                        mWorkThread.join();
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
             }
             Toast.makeText(getContext(), "摄像头开启失败", Toast.LENGTH_SHORT).show();
         }
     };
-
-    @Override
-    public void run() {
-
-//        while(true){
-//            if(mCameraDevice !=null) {
-//                synchronized (mCameraDevice) {
-//
-//                        //takePicture();
-//
-//                    //AppCompatActivity
-//
-////                FaceBlockView blockView = (FaceBlockView)findViewById(R.id.faceBlock);
-////                if(blockView!=null) {
-////                    blockView.drawFaceBlock(0, 0, 1000, 1000);
-////                }
-//
-////                    try {
-////                        Thread.sleep(100);
-////                    } catch (InterruptedException e) {
-////                        e.printStackTrace();
-////                    }
-//                }
-//            }
-//        }
-    }
 }
 
