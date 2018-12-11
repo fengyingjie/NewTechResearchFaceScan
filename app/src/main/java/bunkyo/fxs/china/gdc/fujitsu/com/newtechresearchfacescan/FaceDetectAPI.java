@@ -1,4 +1,4 @@
-11package bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan;
+package bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan;
 
 import com.baidu.aip.client.BaseClient;
 import com.baidu.aip.error.AipError;
