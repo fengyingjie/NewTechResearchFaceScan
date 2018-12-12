@@ -4,13 +4,17 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.ImageFormat;
+import android.graphics.Rect;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraDevice;
 import android.hardware.camera2.CameraManager;
 import android.hardware.camera2.CaptureRequest;
+import android.hardware.camera2.CaptureResult;
 import android.hardware.camera2.TotalCaptureResult;
+import android.hardware.camera2.params.Face;
+import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.Image;
 import android.media.ImageReader;
 import android.os.Build;
@@ -22,6 +26,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.Surface;
 import android.view.SurfaceHolder;
@@ -29,7 +34,10 @@ import android.view.SurfaceView;
 import android.widget.Toast;
 
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.R;
 import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.FaceDetector;
@@ -50,14 +58,27 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
     private FaceDetector mFaceDetector;
     private FaceBlockView mBlockView;
     private SurfaceHolder mHolder = null;
-    private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
+    private SparseIntArray ORIENTATIONS = null;
+
+    private static final SparseIntArray ORIENTATIONS_BACK = new SparseIntArray();
     static
     {
-        ORIENTATIONS.append(Surface.ROTATION_0, 90);
-        ORIENTATIONS.append(Surface.ROTATION_90, 180);
-        ORIENTATIONS.append(Surface.ROTATION_180, 270);
-        ORIENTATIONS.append(Surface.ROTATION_270, 0);
+        ORIENTATIONS_BACK.append(Surface.ROTATION_0, 90);
+        ORIENTATIONS_BACK.append(Surface.ROTATION_90, 180);
+        ORIENTATIONS_BACK.append(Surface.ROTATION_180, 270);
+        ORIENTATIONS_BACK.append(Surface.ROTATION_270, 0);
     }
+    private static final SparseIntArray ORIENTATIONS_FRONT = new SparseIntArray();
+    static
+    {
+        ORIENTATIONS_FRONT.append(Surface.ROTATION_0, 270);
+        ORIENTATIONS_FRONT.append(Surface.ROTATION_90, 0);
+        ORIENTATIONS_FRONT.append(Surface.ROTATION_180, 90);
+        ORIENTATIONS_FRONT.append(Surface.ROTATION_270, 180);
+    }
+
+    private boolean mFaceDetectSupported;
+    private Integer mFaceDetectMode;
 
     public CameraPreviewView(Context context) {
         super(context);
@@ -147,10 +168,34 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
                     if(lensFacing == CameraCharacteristics.LENS_FACING_BACK){
                         Log.i(LOG_TAG,"LENS_FACING_BACK Founed");
                         mCameraID = cameraID;
-
+                        ORIENTATIONS = ORIENTATIONS_BACK;
                         //float[] b = characteristics.get(CameraCharacteristics.LENS_POSE_ROTATION);
                     }
 
+                    StreamConfigurationMap streamConfigurationMap = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
+
+                    Size[] sizes = streamConfigurationMap.getOutputSizes(ImageFormat.JPEG);
+
+                    //设置预览大小
+                    Size mPreviewSize = sizes[0];
+
+                    //获取人脸检测参数
+                    int[] FD =characteristics.get(CameraCharacteristics.STATISTICS_INFO_AVAILABLE_FACE_DETECT_MODES);
+                    int maxFD=characteristics.get(CameraCharacteristics.STATISTICS_INFO_MAX_FACE_COUNT);
+
+                    if (FD.length>0) {
+                        List<Integer> fdList = new ArrayList<>();
+                        for (int FaceD : FD ) {
+                            fdList.add(FaceD);
+                            Log.e(LOG_TAG, "setUpCameraOutputs: FD type:" + Integer.toString(FaceD));
+                        }
+                        Log.e(LOG_TAG, "setUpCameraOutputs: FD count" + Integer.toString(maxFD));
+
+                        if (maxFD > 0) {
+                            mFaceDetectSupported = true;
+                            mFaceDetectMode = Collections.max(fdList);
+                        }
+                    }
                 }
 
                 //打开摄像头
@@ -217,7 +262,7 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
                     // 打开闪光灯
                     previewRequestBuilder.set(CaptureRequest.CONTROL_AE_MODE, CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH);
 
-                    //previewRequestBuilder.set(CaptureRequest.STATISTICS_FACE_DETECT_MODE,CaptureRequest.STATISTICS_FACE_DETECT_MODE_FULL);
+                    previewRequestBuilder.set(CaptureRequest.STATISTICS_FACE_DETECT_MODE,CaptureRequest.STATISTICS_FACE_DETECT_MODE_FULL);
                     // 显示预览
                     // 获取手机方向
                     int rotation = new Float(getRootView().getRotation()).intValue();
@@ -228,11 +273,53 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
 
                     final CameraCaptureSession.CaptureCallback capCallback = new CameraCaptureSession.CaptureCallback() {
 
+                        /**
+                         * 对摄像头返回的结果进行处理,并获取人脸数据
+                         * @param result 摄像头数据
+                         */
+                        private void process(CaptureResult result) {
+
+                            //获得Face类
+                            Face face[]=result.get(CaptureResult.STATISTICS_FACES);
+
+                            if(mBlockView !=null && face!=null && face.length > 0) {
+                                //mFaceDetector.mFaceBlock = (FaceBlockView) findViewById(R.id.faceBlock);
+                                Message msg = new Message();
+                                //msg.what = MSG_FACERECT_READY;
+                                Bundle bundle = new Bundle();
+                                bundle.putSerializable("FACEDATA",face);
+                                msg.setData(bundle);
+                                mBlockView.sendMessage(msg);
+                            }
+
+                            //如果有人脸的话
+                            if (face.length>0 ){
+                                Log.e(LOG_TAG, "face detected " + Integer.toString(face.length));
+
+                                //获取人脸矩形框
+                                Rect bounds = face[0].getBounds();
+
+                                //float y = mPreviewSize.getHeight()/2 - bounds.top ;
+
+                                Log.e("height" , String.valueOf(bounds.bottom-bounds.top));
+                                Log.e("top" , String.valueOf(bounds.top));
+                                Log.e("left" ,  String.valueOf(bounds.left));
+                                Log.e("right" , String.valueOf(bounds.right));
+                            }
+                        }
+
+                        //@Override
+                        public void onCaptureProgressed(CameraCaptureSession session, CaptureRequest request, TotalCaptureResult result) {
+                            super.onCaptureProgressed(session, request, result);
+                            Log.e(LOG_TAG,"onCaptureProgressed");
+                            process(result);
+                        }
+
                         @Override
                         public void onCaptureCompleted(CameraCaptureSession session, CaptureRequest request, TotalCaptureResult result) {
                             super.onCaptureCompleted(session, request, result);
                             Log.e("ee", "onCaptureCompleted");
-
+                            process(result);
                         }
                     };
 
@@ -242,7 +329,13 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
                         e.printStackTrace();
                     }
 
-                }
+                    try {
+                        mCameraCaptureSession.setRepeatingRequest(previewRequest, capCallback, childHandler);
+                    } catch (CameraAccessException e) {
+                        e.printStackTrace();
+                    }
+
+                };
 
                 @Override
                 public void onConfigureFailed(CameraCaptureSession cameraCaptureSession) {
