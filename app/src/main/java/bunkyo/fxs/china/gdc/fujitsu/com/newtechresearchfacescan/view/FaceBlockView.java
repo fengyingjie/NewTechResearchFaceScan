@@ -58,6 +58,8 @@ public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback
     private int mPreviewHeight;
     private float mHeightScaleFactor = 1.0f;
 
+    private ArrayList<String> mNameList;
+
     //private Bitmap mPhoto = null;
     public FaceBlockView(Context context) {
         super(context);
@@ -92,6 +94,7 @@ public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback
         mRectPaint.setStrokeWidth(5);
         setZOrderOnTop(true);// 设置为顶端
         BaiduFaceClient.init();
+        mNameList = new ArrayList<String>();
 
         handlerThread = new HandlerThread("FaceBlockView");
         handlerThread.start();
@@ -109,7 +112,7 @@ public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback
 
                         /**拿到当前画布 然后锁定**/
                         mCanvas = mHolder.lockCanvas();
-                        mCanvas.drawColor(Color.TRANSPARENT,PorterDuff.Mode.CLEAR);
+                        //mCanvas.drawColor(Color.TRANSPARENT,PorterDuff.Mode.CLEAR);
 
                         switch (msg.what){
                             case MSG_PREVIEW_READY:
@@ -170,11 +173,18 @@ public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback
 
                                 drawFaceRect(facesData);
 
-                                /**计算出一次更新的毫秒数**/
-                                diffTime = (int) (System.currentTimeMillis() - msg.getWhen());
-                                fps = 1000;
-                                if(diffTime > 1) {
-                                    fps = 1000 / diffTime;
+//                                /**计算出一次更新的毫秒数**/
+//                                diffTime = (int) (System.currentTimeMillis() - msg.getWhen());
+//                                fps = 1000;
+//                                if(diffTime > 1) {
+//                                    fps = 1000 / diffTime;
+//                                }
+
+                                mTextPaint.setTextSize(50);
+                                mTextPaint.setColor(Color.BLACK);
+                                for(int j = 0; j < mNameList.size(); j++){
+
+                                    mCanvas.drawText(mNameList.get(j), 100, 200+j*50, mTextPaint);
                                 }
 
 //                                debugText = "fps:" + String.valueOf(fps);
@@ -242,15 +252,18 @@ public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback
 //                mCanvas.drawText("id:" + faceData.getId(), left, bottom, mTextPaint);
 //            }
 
+            boolean findFlag = false;
+            for(String name : mNameList){
+                if(name.equals(faceData.getId())){
+                    findFlag = true;
+                }
+            }
 
-
-            mTextPaint.setTextSize(50);
-            mTextPaint.setColor(Color.BLACK);
-            mCanvas.drawText(faceData.getId(), 100, 200+i*50, mTextPaint);
+            if(!findFlag) {
+                mNameList.add(faceData.getId());
+            }
             Log.i("FaceBlockView", "Face Founnd");
         }
-
-
     }
 
     private int transformX(int x){
