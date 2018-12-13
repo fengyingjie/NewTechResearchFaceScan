@@ -88,7 +88,7 @@ public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback
         mTextPaint.setStyle(Paint.Style.FILL);
         mRectPaint = new Paint();
         mRectPaint.setColor(Color.BLUE);
-        mRectPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+        mRectPaint.setStyle(Paint.Style.STROKE);
         mRectPaint.setStrokeWidth(5);
         setZOrderOnTop(true);// 设置为顶端
         BaiduFaceClient.init();
@@ -99,26 +99,30 @@ public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
-                switch (msg.what){
-                    case MSG_PREVIEW_READY:
-                        //msg.getData();
-                        break;
-                    case MSG_FACEBLOCKVIEW_READY:
-                        break;
-                    case MSG_FACERECT_READY:
-                        Log.i("FaceBlockView","MSG_FACERECT_READY start At:"+String.valueOf(System.currentTimeMillis()));
 
-                        ArrayList<Rect> faces = (ArrayList<Rect>)(msg.getData().get("FACEDATA"));
-                        int PIC_WIDTH = (int) msg.getData().get("PIC_WIDTH");
-                        int PIC_HEIGHT = (int) msg.getData().get("PIC_HEIGHT");
+                try{
+                    /**在这里加上线程安全锁**/
+                    synchronized (mHolder) {
+                        int diffTime;
+                        int fps = 1000;
+                        String debugText;
 
-                        try{
-                            /**在这里加上线程安全锁**/
-                            synchronized (mHolder) {
+                        /**拿到当前画布 然后锁定**/
+                        mCanvas = mHolder.lockCanvas();
+                        mCanvas.drawColor(Color.TRANSPARENT,PorterDuff.Mode.CLEAR);
 
-                                /**拿到当前画布 然后锁定**/
-                                mCanvas = mHolder.lockCanvas();
-                                mCanvas.drawColor(Color.TRANSPARENT,PorterDuff.Mode.CLEAR);
+                        switch (msg.what){
+                            case MSG_PREVIEW_READY:
+                                //msg.getData();
+                                break;
+                            case MSG_FACEBLOCKVIEW_READY:
+                                break;
+                            case MSG_FACERECT_READY:
+                                Log.i("FaceBlockView","MSG_FACERECT_READY start At:"+String.valueOf(System.currentTimeMillis()));
+
+                                ArrayList<Rect> faces = (ArrayList<Rect>)(msg.getData().get("FACEDATA"));
+                                int PIC_WIDTH = (int) msg.getData().get("PIC_WIDTH");
+                                int PIC_HEIGHT = (int) msg.getData().get("PIC_HEIGHT");
 
                                 mWidthScaleFactor = (float)mCanvas.getWidth() / (float)PIC_WIDTH;
                                 mHeightScaleFactor = (float)mCanvas.getHeight() / (float)PIC_HEIGHT;
@@ -128,67 +132,38 @@ public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback
                                     int right = transformX(face.right);
                                     int top = transformY(face.top);
                                     int bottom = transformY(face.bottom);
+                                    Log.i("FaceBlockView",face.toString());
+                                    //mCanvas.drawRect(left,top,right,bottom,mRectPaint);
 
-                                    //canvas.drawRect(left,top,right,bottom,mRectPaint);
-
-                                    mCanvas.drawLine(left, top, right, top, mRectPaint);
-                                    mCanvas.drawLine(left, bottom, right, bottom, mRectPaint);
-                                    mCanvas.drawLine(left, top, left, bottom, mRectPaint);
-                                    mCanvas.drawLine(right, top, right, bottom, mRectPaint);
                                 }
 
                                 /**计算出一次更新的毫秒数**/
-                                int diffTime = (int) (System.currentTimeMillis() - msg.getWhen());
-                                int fps = 1000;
+                                diffTime = (int) (System.currentTimeMillis() - msg.getWhen());
+                                fps = 1000;
                                 if(diffTime > 1) {
                                     fps = 1000 / diffTime;
                                 }
 
-                                String debugText = "fps:" + String.valueOf(fps);
-                                mTextPaint.setTextSize(50);
-                                mCanvas.drawText(debugText, 0, 100, mTextPaint);
-                            }
-                        } catch (Exception e) {
-                        } finally {
-                            if (mCanvas != null)
-                                mHolder.unlockCanvasAndPost(mCanvas);//保证每次都将绘图的内容提交
-                            mCanvas = null;
-                        }
+//                                debugText = "fps:" + String.valueOf(fps);
+//                                mTextPaint.setTextSize(50);
+//                                mCanvas.drawText(debugText, 0, 100, mTextPaint);
 
-                        Log.i("FaceBlockView","MSG_FACERECT_READY end At:"+String.valueOf(System.currentTimeMillis()));
-                        break;
-                    case MSG_FACEDATA_READY:
-                        Log.i("FaceBlockView","MSG_FACEDATA_READY start At:"+String.valueOf(System.currentTimeMillis()));
 
-                        byte[] bytes = (byte[])(msg.getData().get("FACEDATA"));
-                        BitmapFactory.Options bitmapOption = new BitmapFactory.Options();
-                        //图片的参数(这个参数要有，不然找不到人脸)
-                        //bitmapOption.inPreferredConfig = Bitmap.Config.RGB_565;
-                        final Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length,bitmapOption);
-                        ArrayList facesData = BaiduFaceClient.search(bitmap);
-//                        ArrayList facesData = BaiduFaceClient.detect(bitmap);
-//                        if(facesData!=null && facesData.size() ==1){
-//                            FaceData faceData = BaiduFaceClient.search(bitmap);
-//                            FaceData faceRectData = (FaceData)facesData.get(0);
-//                            if(faceData !=null) {
-//                                faceRectData.setId(faceData.getId());
-//                                faceRectData.setName(faceData.getName());
-//                            }else{
-//                                faceRectData.setId("i don't know");
-//                                faceRectData.setName("i don't know");
-//                            }
-//                        }
+                                Log.i("FaceBlockView","MSG_FACERECT_READY end At:"+String.valueOf(System.currentTimeMillis()));
+                                break;
+                            case MSG_FACEDATA_READY:
+                                Log.i("FaceBlockView","MSG_FACEDATA_READY start At:"+String.valueOf(System.currentTimeMillis()));
 
-                        //ArrayList<FaceData> facesData = new ArrayList<FaceData>();
-                        //facesData.add(new FaceData(new Rect(0,0,bitmap.getWidth()-100,bitmap.getHeight()-100)));
-                        //msg.getData().clear();
-                        try{
-                            /**在这里加上线程安全锁**/
-                            synchronized (mHolder) {
+                                byte[] bytes = (byte[])(msg.getData().get("FACEDATA"));
+                                BitmapFactory.Options bitmapOption = new BitmapFactory.Options();
+                                //图片的参数(这个参数要有，不然找不到人脸)
+                                //bitmapOption.inPreferredConfig = Bitmap.Config.RGB_565;
+                                final Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length,bitmapOption);
+                                ArrayList facesData = BaiduFaceClient.search(bitmap);
 
-                                /**拿到当前画布 然后锁定**/
-                                mCanvas = mHolder.lockCanvas();
-                                mCanvas.drawColor(Color.TRANSPARENT,PorterDuff.Mode.CLEAR);
+//                                /**拿到当前画布 然后锁定**/
+//                                mCanvas = mHolder.lockCanvas();
+//                                mCanvas.drawColor(Color.TRANSPARENT,PorterDuff.Mode.CLEAR);
 
                                 mWidthScaleFactor = (float)mCanvas.getWidth() / (float)bitmap.getWidth();
                                 mHeightScaleFactor = (float)mCanvas.getHeight() / (float)bitmap.getHeight();
@@ -196,27 +171,30 @@ public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback
                                 drawFaceRect(facesData);
 
                                 /**计算出一次更新的毫秒数**/
-                                int diffTime = (int) (System.currentTimeMillis() - msg.getWhen());
-                                int fps = 1000;
+                                diffTime = (int) (System.currentTimeMillis() - msg.getWhen());
+                                fps = 1000;
                                 if(diffTime > 1) {
                                     fps = 1000 / diffTime;
                                 }
 
-                                String debugText = "fps:" + String.valueOf(fps);
-                                mTextPaint.setTextSize(50);
-                                mCanvas.drawText(debugText, 0, 100, mTextPaint);
-                            }
-                        } catch (Exception e) {
-                        } finally {
-                            if (mCanvas != null)
-                                mHolder.unlockCanvasAndPost(mCanvas);//保证每次都将绘图的内容提交
-                                mCanvas = null;
-                        }
+//                                debugText = "fps:" + String.valueOf(fps);
+//                                mTextPaint.setTextSize(50);
+//                                mCanvas.drawText(debugText, 0, 100, mTextPaint);
 
-                        Log.i("FaceBlockView","MSG_FACEDATA_READY end At:"+String.valueOf(System.currentTimeMillis()));
-                        break;
-                    default:break;
+                                Log.i("FaceBlockView","MSG_FACEDATA_READY end At:"+String.valueOf(System.currentTimeMillis()));
+                                break;
+                            default:break;
+                        }
+                    }
+
+                } catch (Exception e) {
+                } finally {
+                    if (mCanvas != null)
+                        mHolder.unlockCanvasAndPost(mCanvas);//保证每次都将绘图的内容提交
+                    mCanvas = null;
                 }
+
+
             }
         };
 
@@ -257,20 +235,22 @@ public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback
             int top = transformY(faceData.getFaceRect().top);
             int bottom = transformY(faceData.getFaceRect().bottom);
 
-            //canvas.drawRect(left,top,right,bottom,mRectPaint);
+//            mCanvas.drawRect(left,top,right,bottom,mRectPaint);
 
-            mCanvas.drawLine(left,top,right,top,mRectPaint);
-            mCanvas.drawLine(left,bottom,right,bottom,mRectPaint);
-            mCanvas.drawLine(left,top,left,bottom,mRectPaint);
-            mCanvas.drawLine(right,top,right,bottom,mRectPaint);
+//            if(faceData.getId() !=null && faceData.getId().trim().length() > 0) {
+//                mTextPaint.setTextSize(30);
+//                mCanvas.drawText("id:" + faceData.getId(), left, bottom, mTextPaint);
+//            }
 
-            //mTextPaint.setTextSize((bottom-top)/3);
-            if(faceData.getId() !=null && faceData.getId().trim().length() > 0) {
-                mTextPaint.setTextSize(30);
-                mCanvas.drawText("id:" + faceData.getId(), left, bottom, mTextPaint);
-            }
+
+
+            mTextPaint.setTextSize(50);
+            mTextPaint.setColor(Color.BLACK);
+            mCanvas.drawText(faceData.getId(), 100, 200+i*50, mTextPaint);
             Log.i("FaceBlockView", "Face Founnd");
         }
+
+
     }
 
     private int transformX(int x){

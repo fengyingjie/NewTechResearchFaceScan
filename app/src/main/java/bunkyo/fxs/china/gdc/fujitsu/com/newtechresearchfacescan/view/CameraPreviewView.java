@@ -86,6 +86,7 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
 
     private Size mPreviewSize;
     private Size mPixelSize;
+    private boolean mHaveFace;
 
     // 为Size定义一个比较器Comparator
     static class CompareSizesByArea implements Comparator<Size>
@@ -263,22 +264,23 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
             e.printStackTrace();
         }
 
-        mImageReader = ImageReader.newInstance(this.getWidth(), this.getHeight(), ImageFormat.JPEG, 1);
+        mImageReader = ImageReader.newInstance(mPreviewSize.getWidth(), mPreviewSize.getHeight(), ImageFormat.JPEG, 1);
         mImageReader.setOnImageAvailableListener(new ImageReader.OnImageAvailableListener() {
             //可以在这里处理拍照得到的临时照片 例如，写入本地
             @Override
             public void onImageAvailable(ImageReader reader) {
 
-                Log.i("onImageAvailable","onImageAvailable Start At:"+String.valueOf(System.currentTimeMillis()));
+                Log.e("onImageAvailable","onImageAvailable Start At:"+String.valueOf(System.currentTimeMillis()));
                 //mTakingPicFlg = true;
                 //mCameraDevice.close();
                 // 拿到拍照照片数据
                 //synchronized (reader) {
+
                 Image image = reader.acquireLatestImage();
                 ByteBuffer buffer = image.getPlanes()[0].getBuffer();
                 byte[] bytes = new byte[buffer.remaining()];
                 buffer.get(bytes);//由缓冲区存入字节数组
-                if(mBlockView !=null) {
+                if(mBlockView !=null && mHaveFace) {
                     //mFaceDetector.mFaceBlock = (FaceBlockView) findViewById(R.id.faceBlock);
                     Message msg = Message.obtain();
                     msg.what = MSG_FACEDATA_READY;
@@ -306,7 +308,7 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
             final CaptureRequest.Builder previewRequestBuilder = mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
             // 将SurfaceView的surface作为CaptureRequest.Builder的目标
             previewRequestBuilder.addTarget(mHolder.getSurface());
-            //previewRequestBuilder.addTarget(mImageReader.getSurface());
+            previewRequestBuilder.addTarget(mImageReader.getSurface());
             // 创建CameraCaptureSession，该对象负责管理处理预览请求和拍照请求
             mCameraDevice.createCaptureSession(Arrays.asList(mHolder.getSurface(),mImageReader.getSurface()), new CameraCaptureSession.StateCallback() // ③
             {
@@ -342,13 +344,16 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
 
                             //如果有人脸的话
                             if (faces.length>0 ){
+
+                                mHaveFace = true;
+
                                 Log.e(LOG_TAG, "face detected " + Integer.toString(faces.length));
 
                                 //获取人脸矩形框
                                 ArrayList<Rect> FACEDATA = new ArrayList<Rect>();
 
                                 for(Face face : faces){
-                                    RectF boundf = new RectF(faces[0].getBounds());
+                                    RectF boundf = new RectF(face.getBounds());
                                     RectF viewRectF = new RectF();
                                     Rect viewRect = new Rect();
 
@@ -360,9 +365,9 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
                                     viewRectF.roundOut(viewRect);
                                     FACEDATA.add(viewRect);
                                 }
-                                Log.e(LOG_TAG, FACEDATA.toString());
+                                //Log.e(LOG_TAG, FACEDATA.toString());
 
-                                if(mBlockView !=null) {
+                                if(mBlockView !=null && FACEDATA.size() > 0) {
                                     //mFaceDetector.mFaceBlock = (FaceBlockView) findViewById(R.id.faceBlock);
                                     Message msg = new Message();
                                     msg.what = MSG_FACERECT_READY;
@@ -374,6 +379,8 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
                                     msg.setData(bundle);
                                     mBlockView.sendMessage(msg);
                                 }
+                            }else{
+                                mHaveFace = false;
                             }
                         }
 

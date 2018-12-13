@@ -84,7 +84,7 @@ public class BaiduFaceClient {
 
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
-        options.put("max_face_num", "1");
+        options.put("max_face_num", "10");
         options.put("face_type", "LIVE");
 
         String imageType = "BASE64";
