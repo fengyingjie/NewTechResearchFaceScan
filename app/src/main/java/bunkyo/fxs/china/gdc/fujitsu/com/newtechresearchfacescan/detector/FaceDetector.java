@@ -19,6 +19,7 @@ public class FaceDetector {
     public static final int MSG_PREVIEW_READY = 10;
     public static final int MSG_FACEBLOCKVIEW_READY = 20;
     public static final int MSG_FACEDATA_READY = 30;
+    public static final int MSG_FACERECT_READY = 40;
 
     private ThreadGroup mThreadGroup;
     public FaceBlockView mFaceBlock;

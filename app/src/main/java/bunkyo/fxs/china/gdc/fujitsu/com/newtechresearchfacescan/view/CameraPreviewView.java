@@ -4,7 +4,9 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.ImageFormat;
+import android.graphics.Matrix;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CameraCharacteristics;
@@ -37,6 +39,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.R;
@@ -44,6 +47,7 @@ import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.FaceDet
 
 import static android.os.Looper.getMainLooper;
 import static bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.FaceDetector.MSG_FACEDATA_READY;
+import static bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.FaceDetector.MSG_FACERECT_READY;
 
 public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Callback {
 
@@ -57,16 +61,19 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
     private boolean mTakingPicFlg;
     private FaceDetector mFaceDetector;
     private FaceBlockView mBlockView;
-    private SurfaceHolder mHolder = null;
-    private SparseIntArray ORIENTATIONS = null;
+    private SurfaceHolder mHolder;
+    private SparseIntArray ORIENTATIONS;
+    private boolean mFaceDetectSupported;
+    private Integer mFaceDetectMode;
 
     private static final SparseIntArray ORIENTATIONS_BACK = new SparseIntArray();
     static
     {
+        //1.绕原点逆时针旋转90°，2，绕y轴反转180°
         ORIENTATIONS_BACK.append(Surface.ROTATION_0, 90);
-        ORIENTATIONS_BACK.append(Surface.ROTATION_90, 180);
+        ORIENTATIONS_BACK.append(Surface.ROTATION_90, 0);
         ORIENTATIONS_BACK.append(Surface.ROTATION_180, 270);
-        ORIENTATIONS_BACK.append(Surface.ROTATION_270, 0);
+        ORIENTATIONS_BACK.append(Surface.ROTATION_270, 180);
     }
     private static final SparseIntArray ORIENTATIONS_FRONT = new SparseIntArray();
     static
@@ -77,8 +84,21 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
         ORIENTATIONS_FRONT.append(Surface.ROTATION_270, 180);
     }
 
-    private boolean mFaceDetectSupported;
-    private Integer mFaceDetectMode;
+    private Size mPreviewSize;
+    private Size mPixelSize;
+
+    // 为Size定义一个比较器Comparator
+    static class CompareSizesByArea implements Comparator<Size>
+    {
+        @Override
+        public int compare(Size lhs, Size rhs)
+        {
+            // 强转为long保证不会发生溢出
+            return Long.signum((long) lhs.getWidth() * lhs.getHeight() -
+                    (long) rhs.getWidth() * rhs.getHeight());
+        }
+    }
+
 
     public CameraPreviewView(Context context) {
         super(context);
@@ -119,6 +139,37 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
 
+    }
+
+    /**
+     * 计算合适的预览尺寸
+     */
+    private static Size chooseOptimalSize(Size[] choices
+            , int width, int height, Size aspectRatio)
+    {
+        // 收集摄像头支持的大过预览Surface的分辨率
+        List<Size> bigEnough = new ArrayList<>();
+        int w = aspectRatio.getWidth();
+        int h = aspectRatio.getHeight();
+        for (Size option : choices)
+        {
+            //当高宽比例相等(无变型) 并且 大于等于预览高度和宽度时加入备选列表
+            if (option.getHeight() == option.getWidth() * h / w &&
+                    option.getWidth() >= width && option.getHeight() >= height)
+            {
+                bigEnough.add(option);
+            }
+        }
+        // 如果找到多个预览尺寸，获取其中面积最小的
+        if (bigEnough.size() > 0)
+        {
+            return Collections.min(bigEnough, new CompareSizesByArea());
+        }
+        else
+        {
+            Log.e(LOG_TAG,"找不到合适的预览尺寸");
+            return choices[0];
+        }
     }
 
     /**
@@ -176,8 +227,15 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
 
                     Size[] sizes = streamConfigurationMap.getOutputSizes(ImageFormat.JPEG);
 
+
+                    //Rect cRect = characteristics.get(CameraCharacteristics.SENSOR_INFO_ACTIVE_ARRAY_SIZE);//获取成像区域
+                    mPixelSize = characteristics.get(CameraCharacteristics.SENSOR_INFO_PIXEL_ARRAY_SIZE);//获取成像尺寸，同上
+
+                    Size largest = Collections.max(
+                            Arrays.asList(sizes),
+                            new CompareSizesByArea());
                     //设置预览大小
-                    Size mPreviewSize = sizes[0];
+                    mPreviewSize = chooseOptimalSize(sizes,this.getWidth(),this.getHeight(),largest);
 
                     //获取人脸检测参数
                     int[] FD =characteristics.get(CameraCharacteristics.STATISTICS_INFO_AVAILABLE_FACE_DETECT_MODES);
@@ -248,7 +306,7 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
             final CaptureRequest.Builder previewRequestBuilder = mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
             // 将SurfaceView的surface作为CaptureRequest.Builder的目标
             previewRequestBuilder.addTarget(mHolder.getSurface());
-            previewRequestBuilder.addTarget(mImageReader.getSurface());
+            //previewRequestBuilder.addTarget(mImageReader.getSurface());
             // 创建CameraCaptureSession，该对象负责管理处理预览请求和拍照请求
             mCameraDevice.createCaptureSession(Arrays.asList(mHolder.getSurface(),mImageReader.getSurface()), new CameraCaptureSession.StateCallback() // ③
             {
@@ -280,31 +338,42 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
                         private void process(CaptureResult result) {
 
                             //获得Face类
-                            Face face[]=result.get(CaptureResult.STATISTICS_FACES);
-
-                            if(mBlockView !=null && face!=null && face.length > 0) {
-                                //mFaceDetector.mFaceBlock = (FaceBlockView) findViewById(R.id.faceBlock);
-                                Message msg = new Message();
-                                //msg.what = MSG_FACERECT_READY;
-                                Bundle bundle = new Bundle();
-                                bundle.putSerializable("FACEDATA",face);
-                                msg.setData(bundle);
-                                mBlockView.sendMessage(msg);
-                            }
+                            Face faces[]=result.get(CaptureResult.STATISTICS_FACES);
 
                             //如果有人脸的话
-                            if (face.length>0 ){
-                                Log.e(LOG_TAG, "face detected " + Integer.toString(face.length));
+                            if (faces.length>0 ){
+                                Log.e(LOG_TAG, "face detected " + Integer.toString(faces.length));
 
                                 //获取人脸矩形框
-                                Rect bounds = face[0].getBounds();
+                                ArrayList<Rect> FACEDATA = new ArrayList<Rect>();
 
-                                //float y = mPreviewSize.getHeight()/2 - bounds.top ;
+                                for(Face face : faces){
+                                    RectF boundf = new RectF(faces[0].getBounds());
+                                    RectF viewRectF = new RectF();
+                                    Rect viewRect = new Rect();
 
-                                Log.e("height" , String.valueOf(bounds.bottom-bounds.top));
-                                Log.e("top" , String.valueOf(bounds.top));
-                                Log.e("left" ,  String.valueOf(bounds.left));
-                                Log.e("right" , String.valueOf(bounds.right));
+                                    // 构造一个matrix
+                                    Matrix matrix = new Matrix();
+                                    matrix.setRotate(90,mPixelSize.getWidth()/2,mPixelSize.getHeight()/2);
+                                    matrix.mapRect(viewRectF,boundf);
+
+                                    viewRectF.roundOut(viewRect);
+                                    FACEDATA.add(viewRect);
+                                }
+                                Log.e(LOG_TAG, FACEDATA.toString());
+
+                                if(mBlockView !=null) {
+                                    //mFaceDetector.mFaceBlock = (FaceBlockView) findViewById(R.id.faceBlock);
+                                    Message msg = new Message();
+                                    msg.what = MSG_FACERECT_READY;
+                                    Bundle bundle = new Bundle();
+                                    bundle.putSerializable("FACEDATA",FACEDATA);
+                                    //图片转了90°所以高和宽要互换
+                                    bundle.putSerializable("PIC_WIDTH",mPixelSize.getHeight());
+                                    bundle.putSerializable("PIC_HEIGHT",mPixelSize.getWidth());
+                                    msg.setData(bundle);
+                                    mBlockView.sendMessage(msg);
+                                }
                             }
                         }
 

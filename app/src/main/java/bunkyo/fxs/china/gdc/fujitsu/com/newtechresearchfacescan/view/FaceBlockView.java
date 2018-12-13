@@ -88,7 +88,8 @@ public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback
         mTextPaint.setStyle(Paint.Style.FILL);
         mRectPaint = new Paint();
         mRectPaint.setColor(Color.BLUE);
-        mRectPaint.setStyle(Paint.Style.FILL);
+        mRectPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+        mRectPaint.setStrokeWidth(5);
         setZOrderOnTop(true);// 设置为顶端
         BaiduFaceClient.init();
 
@@ -103,6 +104,58 @@ public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback
                         //msg.getData();
                         break;
                     case MSG_FACEBLOCKVIEW_READY:
+                        break;
+                    case MSG_FACERECT_READY:
+                        Log.i("FaceBlockView","MSG_FACERECT_READY start At:"+String.valueOf(System.currentTimeMillis()));
+
+                        ArrayList<Rect> faces = (ArrayList<Rect>)(msg.getData().get("FACEDATA"));
+                        int PIC_WIDTH = (int) msg.getData().get("PIC_WIDTH");
+                        int PIC_HEIGHT = (int) msg.getData().get("PIC_HEIGHT");
+
+                        try{
+                            /**在这里加上线程安全锁**/
+                            synchronized (mHolder) {
+
+                                /**拿到当前画布 然后锁定**/
+                                mCanvas = mHolder.lockCanvas();
+                                mCanvas.drawColor(Color.TRANSPARENT,PorterDuff.Mode.CLEAR);
+
+                                mWidthScaleFactor = (float)mCanvas.getWidth() / (float)PIC_WIDTH;
+                                mHeightScaleFactor = (float)mCanvas.getHeight() / (float)PIC_HEIGHT;
+
+                                for(Rect face : faces) {
+                                    int left = transformX(face.left);
+                                    int right = transformX(face.right);
+                                    int top = transformY(face.top);
+                                    int bottom = transformY(face.bottom);
+
+                                    //canvas.drawRect(left,top,right,bottom,mRectPaint);
+
+                                    mCanvas.drawLine(left, top, right, top, mRectPaint);
+                                    mCanvas.drawLine(left, bottom, right, bottom, mRectPaint);
+                                    mCanvas.drawLine(left, top, left, bottom, mRectPaint);
+                                    mCanvas.drawLine(right, top, right, bottom, mRectPaint);
+                                }
+
+                                /**计算出一次更新的毫秒数**/
+                                int diffTime = (int) (System.currentTimeMillis() - msg.getWhen());
+                                int fps = 1000;
+                                if(diffTime > 1) {
+                                    fps = 1000 / diffTime;
+                                }
+
+                                String debugText = "fps:" + String.valueOf(fps);
+                                mTextPaint.setTextSize(50);
+                                mCanvas.drawText(debugText, 0, 100, mTextPaint);
+                            }
+                        } catch (Exception e) {
+                        } finally {
+                            if (mCanvas != null)
+                                mHolder.unlockCanvasAndPost(mCanvas);//保证每次都将绘图的内容提交
+                            mCanvas = null;
+                        }
+
+                        Log.i("FaceBlockView","MSG_FACERECT_READY end At:"+String.valueOf(System.currentTimeMillis()));
                         break;
                     case MSG_FACEDATA_READY:
                         Log.i("FaceBlockView","MSG_FACEDATA_READY start At:"+String.valueOf(System.currentTimeMillis()));
