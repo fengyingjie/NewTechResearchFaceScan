@@ -22,6 +22,7 @@ import android.util.Log;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
 
+import java.io.File;
 import java.util.AbstractQueue;
 import java.util.ArrayList;
 import java.util.Queue;
@@ -31,7 +32,9 @@ import java.util.Vector;
 import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.BaiduFaceClient;
 import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.FaceData;
 import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.FaceDetector;
+import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.ImageSaver;
 
+import static android.os.Environment.DIRECTORY_PICTURES;
 import static bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.FaceDetector.*;
 
 public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback {
@@ -159,8 +162,11 @@ public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback
 
                                 byte[] bytes = (byte[])(msg.getData().get("FACEDATA"));
                                 BitmapFactory.Options bitmapOption = new BitmapFactory.Options();
-                                //图片的参数(这个参数要有，不然找不到人脸)
-                                //bitmapOption.inPreferredConfig = Bitmap.Config.RGB_565;
+
+                                File mFile = new File(getContext().getExternalFilesDir(DIRECTORY_PICTURES), "pic_"+String.valueOf(System.currentTimeMillis())+".jpg");
+                                ImageSaver  saver = new ImageSaver(bytes, mFile);
+                                saver.run();
+
                                 final Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length,bitmapOption);
                                 ArrayList facesData = BaiduFaceClient.search(bitmap);
 

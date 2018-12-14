@@ -35,6 +35,9 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,7 +47,9 @@ import java.util.List;
 
 import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.R;
 import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.FaceDetector;
+import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.ImageSaver;
 
+import static android.os.Environment.DIRECTORY_PICTURES;
 import static android.os.Looper.getMainLooper;
 import static bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.FaceDetector.MSG_FACEDATA_READY;
 import static bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.FaceDetector.MSG_FACERECT_READY;
@@ -281,6 +286,8 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
                 byte[] bytes = new byte[buffer.remaining()];
                 buffer.get(bytes);//由缓冲区存入字节数组
                 if(mBlockView !=null && mHaveFace) {
+//                    File mFile = new File(getContext().getExternalFilesDir(DIRECTORY_PICTURES), "pic_"+String.valueOf(System.currentTimeMillis())+".jpg");
+//                    childHandler2.post(new ImageSaver(bytes, mFile));
                     //mFaceDetector.mFaceBlock = (FaceBlockView) findViewById(R.id.faceBlock);
                     Message msg = Message.obtain();
                     msg.what = MSG_FACEDATA_READY;
@@ -289,7 +296,9 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
                     msg.setData(bundle);
                     Log.i("onImageAvailable","mBlockView.sendMessage At:"+String.valueOf(System.currentTimeMillis()));
                     mBlockView.sendMessage(msg);
+
                 }
+
 
                 image.close();
                 image = null;
