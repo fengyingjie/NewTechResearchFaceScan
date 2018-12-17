@@ -282,6 +282,7 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
                 //synchronized (reader) {
 
                 Image image = reader.acquireLatestImage();
+
                 ByteBuffer buffer = image.getPlanes()[0].getBuffer();
                 byte[] bytes = new byte[buffer.remaining()];
                 buffer.get(bytes);//由缓冲区存入字节数组
