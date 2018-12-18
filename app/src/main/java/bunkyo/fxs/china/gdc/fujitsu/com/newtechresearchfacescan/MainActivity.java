@@ -21,7 +21,7 @@ import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.view.FaceBlockVi
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
-    private FaceDetector mFacedetector;
+    //private FaceDetector mFacedetector;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         CameraPreviewView prView = (CameraPreviewView)findViewById(R.id.previewSurface);
 //        prView.getHolder().addCallback(new FaceBlockCtl());
 
-        mFacedetector = new FaceDetector(faceBlockView);
+        //mFacedetector = new FaceDetector(faceBlockView);
         //prView.setPhotoDetector(mFacedetector);
 
         mTextMessage = (TextView) findViewById(R.id.message);

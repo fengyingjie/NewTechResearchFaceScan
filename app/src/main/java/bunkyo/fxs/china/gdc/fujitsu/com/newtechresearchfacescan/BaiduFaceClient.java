@@ -3,6 +3,7 @@ package bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.util.Base64;
+import android.util.Log;
 
 import com.baidu.aip.face.AipFace;
 
@@ -23,9 +24,14 @@ public class BaiduFaceClient {
     public static final String APP_ID = "14757265";
     public static final String API_KEY = "TZNNBCvRpbtcLoCgu6CMunoA";
     public static final String SECRET_KEY = "mG1ofHNuBZ4jkdUypwfYQj58D3nbedO9";
+
+    public static final String TAG = "BaiduFaceClient";
+
     private static FaceDetectAPI client;
 
     public static void init() {
+
+
         // 初始化一个AipFace
         client = new FaceDetectAPI(APP_ID, API_KEY, SECRET_KEY);
 
@@ -80,11 +86,14 @@ public class BaiduFaceClient {
     }
     public static ArrayList search(Bitmap image) {
 
-        ArrayList resultList = new ArrayList();
+        long startTime = System.currentTimeMillis();
+
+        ArrayList resultList = null;
 
         // 传入可选参数调用接口
         HashMap<String, String> options = new HashMap<String, String>();
         options.put("max_face_num", "10");
+        options.put("max_user_num", "10");
         options.put("face_type", "LIVE");
 
         String imageType = "BASE64";
@@ -92,34 +101,12 @@ public class BaiduFaceClient {
 
         // 人脸检测
         JSONObject res = client.multiSearch(bitmapToBase64(image), imageType, groupidList,options);
-
-//        try {
-//
-//            String error_code = res.getString("error_code");
-//            if("0".equals(error_code)) {
-//                JSONObject result = res.getJSONObject("result");
-//
-//                String faceToken = result.getString("face_token");
-//                if (faceToken != null && faceToken.trim().length() > 0) {
-//
-//                    JSONArray userList = result.getJSONArray("user_list");
-//
-//                    if (userList != null && userList.length() > 0) {
-//
-//                        JSONObject user = userList.getJSONObject(0);
-//                        if(user.getDouble("score") > 90.0) {
-//                            return FaceData.createBySearch(userList.getJSONObject(0));
-//                        }
-//                    }
-//                }
-//            }
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
+        //Log.d(TAG,"search method result in JSONObject:" + res );
 
         try {
             String error_code = res.getString("error_code");
             if("0".equals(error_code)){
+                resultList = new ArrayList();
                 JSONObject result = res.getJSONObject("result");
                 int faceNum = result.getInt("face_num");
                 if(faceNum > 0) {
@@ -130,13 +117,13 @@ public class BaiduFaceClient {
                         resultList.add(FaceData.createBySearch(face));
                     }
                 }
-                return resultList;
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        return null;
+        long endtTime = System.currentTimeMillis();
+        Log.d(TAG,"search method time count in ms:" + ((endtTime-startTime)) );
+        return resultList;
     }
 
     private static String bitmapToBase64(Bitmap bitmap) {

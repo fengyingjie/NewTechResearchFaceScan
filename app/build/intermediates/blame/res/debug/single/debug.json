@@ -60,20 +60,20 @@
         "source": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_snackbar.xml.flat",
-        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\design-widget-28.0.0-alpha1.aar\\2bc9891e9014e6c01eab3c42746796c8\\res\\layout\\design_layout_snackbar.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_track_material.xml.flat",
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable\\abc_seekbar_track_material.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_material_light.xml.flat",
-        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\color\\abc_primary_text_material_light.xml"
+        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_snackbar.xml.flat",
+        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\design-widget-28.0.0-alpha1.aar\\2bc9891e9014e6c01eab3c42746796c8\\res\\layout\\design_layout_snackbar.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_design_ic_visibility.png.flat",
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\design-textfield-28.0.0-alpha1.aar\\16c12b1c918438b0eff8aa6d89b78753\\res\\drawable-hdpi-v4\\design_ic_visibility.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_material_light.xml.flat",
+        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\color\\abc_primary_text_material_light.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -108,12 +108,12 @@
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\design-button-28.0.0-alpha1.aar\\4abd4ebb80cb0c3e288306cc74b37e45\\res\\color\\mtrl_text_btn_text_color_selector.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_btn_text_color_selector.xml.flat",
-        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\design-button-28.0.0-alpha1.aar\\4abd4ebb80cb0c3e288306cc74b37e45\\res\\color\\mtrl_btn_text_color_selector.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-xxxhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_btn_text_color_selector.xml.flat",
+        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\design-button-28.0.0-alpha1.aar\\4abd4ebb80cb0c3e288306cc74b37e45\\res\\color\\mtrl_btn_text_color_selector.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
@@ -124,12 +124,12 @@
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\design-internal-28.0.0-alpha1.aar\\6a24a4cf89c6e3b4e82d89582b9fdb1e\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_activity_chooser_view.xml.flat",
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -192,12 +192,12 @@
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-mdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_thumb_material.xml.flat",
-        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable\\abc_seekbar_thumb_material.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-xhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_thumb_material.xml.flat",
+        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
@@ -236,12 +236,12 @@
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_item_background_holo_dark.xml.flat",
-        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable\\abc_item_background_holo_dark.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_item_background_holo_dark.xml.flat",
+        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
@@ -324,24 +324,24 @@
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13_design_layout_snackbar.xml.flat",
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\design-widget-28.0.0-alpha1.aar\\2bc9891e9014e6c01eab3c42746796c8\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
-        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_16dp.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_36dp.png.flat",
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
+        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
@@ -464,12 +464,12 @@
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\design-bottomnavigation-28.0.0-alpha1.aar\\22ef0abb1c8b2a58f028961e8bd1563c\\res\\color\\mtrl_bottom_nav_item_tint.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
-        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-mdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
+        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
@@ -512,12 +512,12 @@
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\color\\abc_background_cache_hint_selector_material_dark.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tooltip_frame_dark.xml.flat",
-        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable\\tooltip_frame_dark.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\interpolator-v21_mtrl_linear_out_slow_in.xml.flat",
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\design-animation-28.0.0-alpha1.aar\\98c3c428234cb0e257db76339d57a10b\\res\\interpolator-v21\\mtrl_linear_out_slow_in.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tooltip_frame_dark.xml.flat",
+        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable\\tooltip_frame_dark.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_chip_text_color.xml.flat",
@@ -536,12 +536,12 @@
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_36dp.png.flat",
-        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_design_tint_password_toggle.xml.flat",
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\design-textfield-28.0.0-alpha1.aar\\16c12b1c918438b0eff8aa6d89b78753\\res\\color-v23\\design_tint_password_toggle.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_36dp.png.flat",
+        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_36dp.png.flat",
@@ -560,12 +560,12 @@
         "source": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\src\\main\\res\\drawable\\ic_notifications_black_24dp.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable_navigation_empty_icon.xml.flat",
         "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\design-internal-28.0.0-alpha1.aar\\6a24a4cf89c6e3b4e82d89582b9fdb1e\\res\\drawable\\navigation_empty_icon.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\feng.yingjie\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\6d069986e1549bb91d68a19a11fb473b\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",

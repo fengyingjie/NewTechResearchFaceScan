@@ -1,4 +1,4 @@
-#Fri Dec 07 17:18:59 CST 2018
+#Tue Dec 18 15:25:51 CST 2018
 base.0=D\:\\AndroidStudioProjects\\NewTechResearchFaceScan\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\7
 path.0=classes.dex
 renamed.0=classes.dex

@@ -48,14 +48,16 @@ public class FaceData {
             FaceData result = new FaceData();
             result.setFaceRect(faceRect);
 
+            result.setId("unknow");
+            result.setName("unknow");
             JSONArray userList = jsonObj.getJSONArray("user_list");
             if(userList !=null && userList.length() >0) {
                 JSONObject user = userList.getJSONObject(0);
                 double score = user.getDouble("score");
 
-                if(score > 80.0f) {
+                if(score > 70.0f) {
                     result.setId(user.getString("user_id"));
-                    result.setName(user.getString("user_info"));
+                    result.setName(user.getString("user_id"));
                 }
             }
 

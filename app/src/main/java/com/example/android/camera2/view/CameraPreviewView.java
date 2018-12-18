@@ -53,6 +53,7 @@ import java.util.List;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
+import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.FaceDetector;
 import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.ImageSaver;
 
 import static android.os.Environment.DIRECTORY_PICTURES;
@@ -185,6 +186,7 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
      */
     private ImageReader mImageReader;
 
+    private FaceDetector mFaceDetector;
     /**
      * This a callback object for the {@link ImageReader}. "onImageAvailable" will be called when a
      * still image is ready to be saved.
@@ -195,8 +197,20 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
         @Override
         public void onImageAvailable(ImageReader reader) {
 
-            File file = new File(getContext().getExternalFilesDir(DIRECTORY_PICTURES), "pic_"+String.valueOf(System.currentTimeMillis())+".jpg");
-            mBackgroundHandler.post(new ImageSaver2(reader.acquireNextImage(),file));
+            Image mImage = reader.acquireNextImage();
+            ByteBuffer buffer = mImage.getPlanes()[0].getBuffer();
+            byte[] bytes = new byte[buffer.remaining()];
+            buffer.get(bytes);
+
+//            Log.d(TAG,"onImageAvailable mFaceDetector.detect");
+            mFaceDetector.detect(bytes);
+
+//            Log.d(TAG,"onImageAvailable ImageSaver");
+//            File file = new File(getContext().getExternalFilesDir(DIRECTORY_PICTURES), "pic_"+String.valueOf(System.currentTimeMillis())+".jpg");
+//            mBackgroundHandler.post(new ImageSaver(bytes,file));
+
+            bytes = null;
+            mImage.close();
         }
 
     };
@@ -214,7 +228,7 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
             faces = result.get(CaptureResult.STATISTICS_FACES);
             if (faces.length>0 ) {
                 lockFocus();
-                Log.d(TAG, "face detected " + Integer.toString(faces.length));
+                //Log.d(TAG, "face detected " + Integer.toString(faces.length));
             }
 
             switch (mState) {
@@ -328,6 +342,7 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
         mImageFormat = attrs.getAttributeIntValue("","ImageFormat", ImageFormat.JPEG);
         mHolder = getHolder();
         mHolder.addCallback(this);
+        mFaceDetector = new FaceDetector(10);
     }
 
 
@@ -390,7 +405,7 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
 
                 // Find out if we need to swap dimension to get the preview size relative to sensor
                 // coordinate.
-                int displayRotation = 90;//getContext().getWindowManager().getDefaultDisplay().getRotation();
+                int displayRotation = ((Activity)getContext()).getWindowManager().getDefaultDisplay().getRotation();
                 //noinspection ConstantConditions
                 mSensorOrientation = characteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
                 boolean swappedDimensions = false;
@@ -790,50 +805,5 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
             return Long.signum((long) lhs.getWidth() * lhs.getHeight() -
                     (long) rhs.getWidth() * rhs.getHeight());
         }
-
-    }
-
-    /**
-     * Saves a JPEG {@link Image} into the specified {@link File}.
-     */
-    private static class ImageSaver2 implements Runnable {
-
-        /**
-         * The JPEG image
-         */
-        private final Image mImage;
-        /**
-         * The file we save the image into.
-         */
-        private final File mFile;
-
-        ImageSaver2(Image image,File file) {
-            mImage = image;
-            mFile = file;
-        }
-
-        @Override
-        public void run() {
-            ByteBuffer buffer = mImage.getPlanes()[0].getBuffer();
-            byte[] bytes = new byte[buffer.remaining()];
-            buffer.get(bytes);
-            FileOutputStream output = null;
-            try {
-                output = new FileOutputStream(mFile);
-                output.write(bytes);
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                mImage.close();
-                if (null != output) {
-                    try {
-                        output.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }
-
     }
 }

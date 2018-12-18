@@ -21,16 +21,13 @@ public class ImageSaver implements Runnable {
     private File mFile;
 
     public ImageSaver(byte[] image, File file) {
-        mImage = new byte[image.length];
-        System.arraycopy(image, 0, mImage, 0, image.length);
+        mImage = image;//new byte[image.length];
+        //System.arraycopy(image, 0, mImage, 0, image.length);
         mFile = file;
     }
 
     @Override
     public void run() {
-//            ByteBuffer buffer = mImage.getPlanes()[0].getBuffer();
-//            byte[] bytes = new byte[buffer.remaining()];
-//            buffer.get(bytes);
         FileOutputStream output = null;
         try {
             output = new FileOutputStream(mFile);

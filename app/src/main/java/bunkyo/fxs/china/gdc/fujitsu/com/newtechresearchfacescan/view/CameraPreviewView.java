@@ -51,8 +51,8 @@ import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.ImageSa
 
 import static android.os.Environment.DIRECTORY_PICTURES;
 import static android.os.Looper.getMainLooper;
-import static bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.FaceDetector.MSG_FACEDATA_READY;
-import static bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.FaceDetector.MSG_FACERECT_READY;
+import static bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.view.FaceBlockView.MSG_FACEDATA_READY;
+import static bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.view.FaceBlockView.MSG_FACERECT_READY;
 
 public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Callback {
 

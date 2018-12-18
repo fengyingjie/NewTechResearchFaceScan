@@ -39,6 +39,11 @@ import static bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.
 
 public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback {
 
+    public static final int MSG_PREVIEW_READY = 10;
+    public static final int MSG_FACEBLOCKVIEW_READY = 20;
+    public static final int MSG_FACEDATA_READY = 30;
+    public static final int MSG_FACERECT_READY = 40;
+
     /**面部识别数据**/
 //    private volatile FaceData[] mFaceData = null;
 //    private volatile String mExtraData = null;
@@ -226,7 +231,7 @@ public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         if(mFaceDetector != null){
-            mFaceDetector.mFaceBlock = this;
+            //mFaceDetector.mFaceBlock = this;
         }
     }
 
