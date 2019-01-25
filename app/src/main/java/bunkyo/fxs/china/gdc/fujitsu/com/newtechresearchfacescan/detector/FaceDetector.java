@@ -104,7 +104,7 @@ public class FaceDetector {
 
 
             //获得URL对象
-            url = new URL("http://47.94.142.3/example/");
+            url = new URL("http://47.94.142.3/WeixinDemo/userLogin");
             //获得HttpURLConnection对象
             connection = (HttpURLConnection) url.openConnection();
             //设置超时时间
