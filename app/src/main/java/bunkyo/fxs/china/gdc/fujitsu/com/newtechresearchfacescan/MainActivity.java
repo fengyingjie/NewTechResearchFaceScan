@@ -1,65 +1,74 @@
 package bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.view.SurfaceView;
 import android.view.WindowManager;
-import android.widget.AbsoluteLayout;
-import android.widget.LinearLayout;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
-import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.detector.FaceDetector;
-import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.surfaceCtl.FaceBlockCtl;
-import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.view.CameraPreviewView;
 import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.view.FaceBlockView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
-    //private FaceDetector mFacedetector;
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+//    private TextView mTextMessage;
 
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
-                    return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
-            }
-            return false;
-        }
-    };
+    private WebView mWebView;
+    //private FaceDetector mFacedetector;
+//    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+//            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+//
+//        @Override
+//        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//            switch (item.getItemId()) {
+//                case R.id.navigation_home:
+//                    mTextMessage.setText(R.string.title_home);
+//                    return true;
+//                case R.id.navigation_dashboard:
+//                    mTextMessage.setText(R.string.title_dashboard);
+//                    return true;
+//                case R.id.navigation_notifications:
+//                    mTextMessage.setText(R.string.title_notifications);
+//                    return true;
+//            }
+//            return false;
+//        }
+//    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //setContentView(new FaceBlockView(this));
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        FaceBlockView faceBlockView = (FaceBlockView)findViewById(R.id.faceBlock);
-//        faceBlockView.getHolder().addCallback(new FaceBlockCtl());
+
+//        mWebView = (WebView)findViewById(R.id.webview);
+//        mWebView.setBackgroundColor(0);
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//            mWebView.getSettings().setSafeBrowsingEnabled(false);
+//        }
 //
-        CameraPreviewView prView = (CameraPreviewView)findViewById(R.id.previewSurface);
-//        prView.getHolder().addCallback(new FaceBlockCtl());
+//
+//        mWebView.setWebViewClient(new WebViewClient() {
+//            //设置在webView点击打开的新网页在当前界面显示,而不跳转到新的浏览器中
+//            @Override
+//            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+//                view.loadUrl(url);
+//                return true;
+//            }
+//        });
+//        mWebView.getSettings().setJavaScriptEnabled(true);  //设置WebView属性,运行执行js脚本
+//        mWebView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE); //设置WebView属性,不用缓存
+//        mWebView.loadUrl("http://www.fengyunxi.com/");          //调用loadUrl方法为WebView加入链接
 
-        //mFacedetector = new FaceDetector(faceBlockView);
-        //prView.setPhotoDetector(mFacedetector);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+//        mTextMessage = (TextView) findViewById(R.id.message);
+//        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
 }

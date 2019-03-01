@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.BaiduFaceClient;
+import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.MainActivity;
 
 /**
  * 这个类负责把接收到的图片数据提交到百度进行检测，并返回结果。

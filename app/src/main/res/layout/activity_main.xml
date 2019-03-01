@@ -7,40 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:text="@string/title_home"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <!--bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.view.CameraPreviewView!-->
-    <com.example.android.camera2.view.CameraPreviewView
-        android:id="@+id/previewSurface"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <com.example.android.camera2.view.FacePreviewView
+         android:id="@+id/previewSurface"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent" />
 
-    <bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.view.FaceBlockView
-        android:id="@+id/faceBlock"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="1"
-        android:background="#00000000" />
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
 
-</android.support.constraint.ConstraintLayout>
+ </android.support.constraint.ConstraintLayout>
