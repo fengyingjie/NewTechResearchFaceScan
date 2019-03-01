@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.graphics.Point;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
@@ -29,6 +30,8 @@ import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.Surface;
 import android.view.SurfaceView;
+
+import com.example.android.camera2.view.FacePreviewView;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -125,6 +128,9 @@ public class FaceCamera {
     /**
      * {@link CameraDevice.StateCallback} is called when {@link CameraDevice} changes its state.
      */
+
+    private OnFaceAvailableListener mFaceAvailableListener;
+
     public class StateCallback extends CameraDevice.StateCallback {
 
         @Override
@@ -157,9 +163,10 @@ public class FaceCamera {
      * @param previewSurface 预览用视图
      */
 
-    public FaceCamera(int imageFormat, SurfaceView previewSurface) {
+    public FaceCamera(int imageFormat, SurfaceView previewSurface, OnFaceAvailableListener faceAvailableListener) {
         mImageFormat = imageFormat;
         mPreviewSurface = previewSurface;
+        mFaceAvailableListener = faceAvailableListener;
     }
 
     /**
@@ -428,7 +435,11 @@ public class FaceCamera {
         faces = result.get(CaptureResult.STATISTICS_FACES);
         if (faces.length > 0) {
             for(int i=0; i < faces.length; i++){
-                Log.d("FaceCamera", "face detected left:" + faces[i].getBounds().left + "top:" + faces[i].getBounds().top + "right:" + faces[i].getBounds().right + "bottom:" + faces[i].getBounds().bottom);
+
+                //((FacePreviewView)mPreviewSurface).drawRect();
+                if(mFaceAvailableListener != null) {
+                    mFaceAvailableListener.onFaceAvailable(mPreviewSize, new RectF(faces[i].getBounds().left, faces[i].getBounds().top, faces[i].getBounds().right, faces[i].getBounds().bottom));
+                }
             }
             //lockFocus();
             //Log.d(TAG, "face detected " + Integer.toString(faces.length));
@@ -616,5 +627,21 @@ public class FaceCamera {
                                        @NonNull TotalCaptureResult result) {
             process(result);
         }
+    }
+
+    /**
+     * Callback interface for being notified that a face is available.
+     *
+     * <p>
+     * The onFaceAvailable is called per face.
+     * </p>
+     */
+    public interface OnFaceAvailableListener {
+        /**
+         * Callback that is called when a new face is available.
+         *
+         * @param faceRect the Rect the callback is associated with.
+         */
+        void onFaceAvailable(Size outputSize,RectF faceRect);
     }
 }

@@ -1,9 +1,12 @@
 package com.example.android.camera2.view;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.ImageFormat;
+import android.graphics.Paint;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.os.Message;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseIntArray;
@@ -65,7 +68,7 @@ public class FacePreviewView extends SurfaceView implements SurfaceHolder.Callba
         int imageFormat = attrs.getAttributeIntValue("", "ImageFormat", ImageFormat.JPEG);
         mHolder = getHolder();
         mHolder.addCallback(this);
-        mFaceCamera = new FaceCamera(imageFormat,this);
+        //mFaceCamera = new FaceCamera(imageFormat,this);
         //mFaceDetector = new FaceDetector(10);
     }
 
@@ -75,7 +78,6 @@ public class FacePreviewView extends SurfaceView implements SurfaceHolder.Callba
         mHolder = holder;
         mHolder.setKeepScreenOn(true);
         mFaceCamera.openCamera(getWidth(), getHeight());
-//        startBackgroundThread();
 //        //打开相机
 //        openCamera(this.getWidth(), this.getHeight());
     }
@@ -90,29 +92,9 @@ public class FacePreviewView extends SurfaceView implements SurfaceHolder.Callba
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
         mFaceCamera.closeCamera();
-//        stopBackgroundThread();
     }
 
-    /**
-     * Starts a background thread and its {@link Handler}.
-     */
-    private void startBackgroundThread() {
-        mBackgroundThread = new HandlerThread("FaceCameraThread");
-        mBackgroundThread.start();
-        mBackgroundHandler = new Handler(mBackgroundThread.getLooper());
-    }
-
-    /**
-     * Stops the background thread and its {@link Handler}.
-     */
-    private void stopBackgroundThread() {
-        mBackgroundThread.quitSafely();
-        try {
-            mBackgroundThread.join();
-            mBackgroundThread = null;
-            mBackgroundHandler = null;
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public void setFaceCamera(FaceCamera faceCamera){
+        mFaceCamera = faceCamera;
     }
 }

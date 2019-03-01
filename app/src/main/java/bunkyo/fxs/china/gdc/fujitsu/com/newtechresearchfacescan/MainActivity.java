@@ -1,5 +1,6 @@
 package bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan;
 
+import android.graphics.ImageFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,13 +13,18 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 
-import bunkyo.fxs.china.gdc.fujitsu.com.newtechresearchfacescan.view.FaceBlockView;
+import com.example.android.camera2.FaceCamera;
+import com.example.android.camera2.view.FacePreviewView;
+import com.example.android.camera2.view.FaceBlockView;
 
 public class MainActivity extends AppCompatActivity {
 
 //    private TextView mTextMessage;
 
     private WebView mWebView;
+    private FaceCamera mFaceCamera;
+    private FacePreviewView mFacePreviewView;
+    private FaceBlockView mFaceBlockView;
     //private FaceDetector mFacedetector;
 //    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
 //            = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -45,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        mFacePreviewView = findViewById(R.id.previewSurface);
+        mFaceBlockView = findViewById(R.id.blockFaceSurface);
+        mFaceCamera = new FaceCamera(ImageFormat.JPEG, mFacePreviewView, mFaceBlockView);
+        mFacePreviewView.setFaceCamera(mFaceCamera);
 
 //        mWebView = (WebView)findViewById(R.id.webview);
 //        mWebView.setBackgroundColor(0);
