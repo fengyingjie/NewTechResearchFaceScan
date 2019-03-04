@@ -114,17 +114,22 @@ public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
-                if (msg.what==1){
-                    mCanvas = mHolder.lockCanvas();
-                    mCanvas.drawColor(Color.TRANSPARENT,PorterDuff.Mode.CLEAR);
 
-                    mCanvas.setMatrix(mMatrix);
+                mCanvas = mHolder.lockCanvas();
+                mCanvas.drawColor(Color.TRANSPARENT,PorterDuff.Mode.CLEAR);
+                if (msg.what==1){
+
+
+
+                    //mCanvas.setMatrix(mMatrix);
                     RectF rect = msg.getData().getParcelable("faceRect");
                     mCanvas.drawRect(rect,mRectPaint);
-                    //canvas.clipRect(0,0,500,500);
-                    mHolder.unlockCanvasAndPost(mCanvas);
-                    mCanvas = null;
+                    //mCanvas.drawRect(0,0,100,100,mRectPaint);
+
+
                 }
+                mHolder.unlockCanvasAndPost(mCanvas);
+                mCanvas = null;
             }
         };
     }
@@ -148,10 +153,12 @@ public class FaceBlockView extends SurfaceView implements SurfaceHolder.Callback
         Message msg = new Message();
         msg.what = 1;
         Bundle bul =  new Bundle();
-        bul.putParcelable("faceRect",faceRect);
+        RectF mapedRect = new RectF();
         msg.setData(bul);
         mMatrix.setRectToRect(new RectF(0,0,output.getWidth(),output.getHeight()),
             new RectF(0,0,getWidth(),getHeight()),Matrix.ScaleToFit.FILL);
+        mMatrix.mapRect(mapedRect,faceRect);
+        bul.putParcelable("faceRect",mapedRect);
         mBackgroundHandler.sendMessage(msg);
     }
 }

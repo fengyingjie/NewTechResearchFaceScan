@@ -89,6 +89,10 @@ public class FaceCamera {
      */
     private Size mPreviewSize;
     /**
+     * The {@link Size} of camera image.
+     */
+    private Size mImageSize;
+    /**
      * The current state of camera state for taking pictures.
      */
     private int mState = FaceCameraConst.STATE_PREVIEW;
@@ -251,6 +255,7 @@ public class FaceCamera {
                         new FaceCameraUtil.CompareSizesByArea());
                 mImageReader = ImageReader.newInstance(largest.getWidth(), largest.getHeight(),
                         ImageFormat.JPEG, /*maxImages*/1);
+                mImageSize = largest;
                 mImageReader.setOnImageAvailableListener(
                         mOnImageAvailableListener, mBackgroundHandler);
 
@@ -438,7 +443,7 @@ public class FaceCamera {
 
                 //((FacePreviewView)mPreviewSurface).drawRect();
                 if(mFaceAvailableListener != null) {
-                    mFaceAvailableListener.onFaceAvailable(mPreviewSize, new RectF(faces[i].getBounds().left, faces[i].getBounds().top, faces[i].getBounds().right, faces[i].getBounds().bottom));
+                    mFaceAvailableListener.onFaceAvailable(mImageSize, new RectF(faces[i].getBounds().left, faces[i].getBounds().top, faces[i].getBounds().right, faces[i].getBounds().bottom));
                 }
             }
             //lockFocus();
@@ -611,6 +616,10 @@ public class FaceCamera {
             stopBackgroundThread();
             mCameraOpenCloseLock.release();
         }
+    }
+
+    public Size getImageSize(){
+        return mImageSize;
     }
 
     public class CaptureCallback extends CameraCaptureSession.CaptureCallback {

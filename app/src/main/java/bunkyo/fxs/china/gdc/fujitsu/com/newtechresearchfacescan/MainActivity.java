@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         mFaceBlockView = findViewById(R.id.blockFaceSurface);
         mFaceCamera = new FaceCamera(ImageFormat.JPEG, mFacePreviewView, mFaceBlockView);
         mFacePreviewView.setFaceCamera(mFaceCamera);
-
 //        mWebView = (WebView)findViewById(R.id.webview);
 //        mWebView.setBackgroundColor(0);
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
